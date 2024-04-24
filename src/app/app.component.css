@@ -1,0 +1,59 @@
+/* Estilo base para los botones */
+
+@font-face {
+  font-family: 'beon';
+  src: url(../assets/fonts/beon-webfont.eot),
+       url(../assets/fonts/beon-webfont.ttf) format('truetype'),
+       url(../assets/fonts/Beon.otf) format('opentype');
+}
+
+.main {
+  background-image: url(../assets/img/background.jpg); 
+  background-size:cover;
+  height: 100vh; 
+}
+
+.banner {
+  background-color: rgba(58, 30, 83,0.2); /* Color de fondo con opacidad */
+  padding: 35px; /* Relleno */
+}
+  
+h4 {
+  color: #ffffff; /* Color del texto */
+  font-size: 24px; /* Tamaño del texto */
+  margin: 10px 0; /* Margen superior e inferior */
+}
+
+.neon {
+  color: #00f; /* Color del texto azul */
+  text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f; /* Efecto de resplandor */
+  font-family: 'beon'; /* Fuente personalizada */
+}
+
+.botonNavegacion {
+  padding: 10px 20px;
+  background-color: #ff00ffc2; /* Color de fondo neon */
+  color: #00f; /* Color del texto azul */
+  border: none; /* Quita el borde */
+  border-radius: 25px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s; /* Transición suave del color de fondo */
+  font-size: 28px; /* Tamaño del texto */
+  text-transform: uppercase; /* Convertir texto en mayúsculas */
+  box-shadow: 0px 4px 10px rgba(255, 0, 255, 0.4); /* Sombra */
+  margin-inline: 10px; /* Margen entre los botones */
+  font-family: 'beon'; /* Fuente personalizada */
+}
+  
+/* Cambia el color de fondo al pasar el ratón */
+.botonNavegacion:hover {
+  color: rgb(255, 255, 255); /* Color del texto azul */
+  text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f; /* Efecto de resplandor */
+  background-color: #ff00ff; /* Cambia a un tono más claro al pasar el ratón */
+}
+
+/* Estilo para los botones activos */
+.botonNavegacion.active {
+  background-color: #cc00cc; /* Color de fondo para el estado activo */
+}
+  

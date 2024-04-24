@@ -70,6 +70,12 @@ Paso 4: deployeo con este comando
 
 firebase deploy
 
+
+
+
+Paso 5 deployeo al hosting cada vez que hago avances con este comando.
+npm run deploy
+
 */
 
 
