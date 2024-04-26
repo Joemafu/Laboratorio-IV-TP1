@@ -3,7 +3,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -20,7 +19,7 @@ export class AppComponent {
   // Para navegar por TypeScript
   private router = inject(Router);
   buttonQuienSoy() {
-    this.test="QuienTeConocePapa";
+    this.test="Sobre mí";
     this.router.navigateByUrl('/quien-soy');
   } 
 
@@ -32,5 +31,4 @@ export class AppComponent {
     this.test="Login";
   }
 
-  
 }

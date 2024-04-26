@@ -1,5 +1,6 @@
 <main class="main">
   <div class="banner" >
+
     <div class="centrado"> 
       <!-- Para navegar por HTML -->
       <button routerLink='/home' class="botonNavegacion" (click)="buttonHome()">Home</button>
@@ -8,6 +9,7 @@
       <!-- Este lo navego por TS, ver función buttonQuienSoy() -->
       <button class="botonNavegacion" (click)="buttonQuienSoy()">Quien soy?</button>
     </div>
+
 
     <div class='neon centrado'> 
       <h4>{{test}}</h4>
@@ -20,13 +22,13 @@
 
   </div>
 
-  <div style=" display:flex; align-items: space-evenly; background-color: rgba(218, 162, 255, 0.5); font-family:Arial, Helvetica, sans-serif; padding: 45px; color:rgba(98, 216, 177); text-shadow: 1px 1px 2px rgba(138,43,226); margin: 35px;">
+  <div class="container">
     
     
     <router-outlet />
     
-    
-    <!-- <p >
+    <!-- 
+    <p >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
       Vel et, repellat, recusandae, nesciunt voluptas hic cum iusto minus odio quas suscipit eaque rerum pariatur consectetur maiores error optio molestiae deserunt. <br>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit.  <br>
