@@ -10,19 +10,24 @@ export const routes: Routes = [
     { 
         // Lazy Loading
         path: 'login',
-        loadComponent: () => import('./components/login/login.component').then(m => m.LoginComponent),
+        loadComponent: () => import('./components/login/login.component').then(c => c.LoginComponent),
     },
     {
         // Lazy Loading
         path: 'quien-soy',
-        loadComponent: () => import('./components/quien-soy/quien-soy.component').then(m => m.QuienSoyComponent),    
+        loadComponent: () => import('./components/quien-soy/quien-soy.component').then(c => c.QuienSoyComponent),    
     },
     {
         // Lazy Loading 
         path: 'home',
-        loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent),
+        loadComponent: () => import('./components/home/home.component').then(c => c.HomeComponent),
+    },
+    {
+        // Lazy Loading
+        path: 'error',
+        loadComponent: () => import('./components/error/error.component').then(c => c.ErrorComponent),
     },
     { 
-        path: '**', redirectTo: 'home'
+        path: '**', redirectTo: 'error'
     }
 ];

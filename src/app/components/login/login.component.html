@@ -1,1 +1,73 @@
-<p>login works!</p>
+<div class="banner">
+
+    <div>
+        <h4>INICIAR SESIÓN</h4>
+    </div>
+
+    <div class="centrado">
+        <label class="item" for="correo">Correo</label>
+        <input [(ngModel)]="usuario" class="item" type="text" name="correo" id="correo">
+    </div>
+    <div class="centrado">
+        <label  class="item" for="pass">Contraseña</label>
+        <input  [(ngModel)]="pass" class="item" type="password" name="pass" id="pass">
+    </div>
+
+    <div class="centrado">
+        <button class="item botonNavegacion">Entrar</button>
+        <button class="item botonNavegacion">Registrarse</button>
+    </div>
+</div>
+
+<div class="banner centrado">
+    <div>
+        <h4>Cuentas Demo</h4>
+        <button class="item botonNavegacion" (click)="buttonDemoUno()">
+            Admin
+        </button>
+    
+        <button class="item botonNavegacion" (click)="buttonDemoDos()">
+            Bruma 😺
+        </button>
+    
+        <button class="item botonNavegacion" (click)="buttonDemoTres()">
+            Joel
+        </button>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!--
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+
+      <h2 class="active"> Sign In </h2>
+      <h2 class="inactive underlineHover">Sign Up </h2>
+  
+
+      <div class="fadeIn first">
+        <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+      </div>
+  
+
+      <form>
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+  
+
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+  
+    </div>
+  </div>
+
+-->
+

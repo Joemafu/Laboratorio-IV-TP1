@@ -1,4 +1,4 @@
-import { Component, inject, NgModule } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
