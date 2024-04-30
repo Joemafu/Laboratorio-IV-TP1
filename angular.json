@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TP1_Sala_De_Juegos": {
+    "mesadejuegostp1laboiv": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/tp1-sala-de-juegos",
+            "outputPath": "dist/mesadejuegostp1laboiv",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "TP1_Sala_De_Juegos:build:production"
+              "buildTarget": "mesadejuegostp1laboiv:build:production"
             },
             "development": {
-              "buildTarget": "TP1_Sala_De_Juegos:build:development"
+              "buildTarget": "mesadejuegostp1laboiv:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "TP1_Sala_De_Juegos:build"
+            "buildTarget": "mesadejuegostp1laboiv:build"
           }
         },
         "test": {

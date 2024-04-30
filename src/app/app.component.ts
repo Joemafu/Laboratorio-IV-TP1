@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'Sala de Juegos';
 
-  test= 'texto prueba';
+  test= 'texto de prueba';
 
   // Para navegar por TypeScript
   private router = inject(Router);
