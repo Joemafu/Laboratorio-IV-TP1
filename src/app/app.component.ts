@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -18,6 +17,7 @@ export class AppComponent {
 
   // Para navegar por TypeScript
   private router = inject(Router);
+  // Navego con typescript
   buttonQuienSoy() {
     this.test="Sobre mí";
     this.router.navigateByUrl('/quien-soy');
@@ -29,6 +29,10 @@ export class AppComponent {
 
   buttonLogIn() {
     this.test="Login";
+  }
+
+  buttonRegistrar() {
+    this.test="Registrar";
   }
 
 }

@@ -27,6 +27,11 @@ export const routes: Routes = [
         path: 'error',
         loadComponent: () => import('./components/error/error.component').then(c => c.ErrorComponent),
     },
+    {
+        // Lazy Loading
+        path: 'registrar',
+        loadComponent: () => import('./components/login/login.component').then(c => c.LoginComponent),
+    },
     { 
         path: '**', redirectTo: 'error'
     }

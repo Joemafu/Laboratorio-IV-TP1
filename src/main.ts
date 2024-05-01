@@ -40,7 +40,7 @@ npm install -g firebase-tools
 
 // PASO 2: Metí el bloque de configuración en ./environments/environment.development.ts
 
-// Paso 3: Importé las funciones que necesito de firebase en ./main.ts
+// Paso 3: Importé las funciones que necesito de firebase en ./main.ts (también se aplicaron en ./app/app.config.ts)
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -87,10 +87,12 @@ Paso 8: deployeo con este comando
 
 firebase deploy
 
+*/
 
-
+/*
 
 Paso 9 deployeo al hosting cada vez que hago avances con este comando.
+
 npm run deploy
 
 */
