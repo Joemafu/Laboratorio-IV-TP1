@@ -1,9 +1,6 @@
-import { Component, NgModule } from '@angular/core';
-import { NgForm, NgModel } from '@angular/forms';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService,   } from '../../services/auth.service'
-
-
 
 @Component({
   selector: 'app-login',
@@ -17,6 +14,7 @@ export class LoginComponent {
   usuario: string = "";
   pass: string ="";
   title: string="INICIAR SESIÓN";
+  alert: string = "";
 
   constructor (private authS: AuthService) {
   }
@@ -41,25 +39,11 @@ export class LoginComponent {
 
   buttonEntrar()
   {
-    try
-    {
-      this.authS.login(this.usuario, this.pass);
-    }
-    catch(e)
-    {
-      console.log(e);
-      console.log("Error en el login");
-    }
-  }
-
-  buttonRegistrarse()
-  {
-    try{
-      this.authS.register(this.usuario, this.pass);
-    }
-    catch(e){
-      console.log(e);
-      console.log("Error en el registro");
-    }
+    this.authS.login(this.usuario, this.pass)
+    .then(alert => {
+      this.alert = alert; // El mensaje de error se asigna al alert para mostrarlo en el HTML
+      this.usuario = "";
+      this.pass = "";
+    });
   }
 }

@@ -1,73 +1,83 @@
 import { Injectable } from '@angular/core';
-/* import { AngularFireAuth } from '@angular/fire/compat/auth'; */
 import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor (private authF: Auth, private router: Router) { }
+  constructor (private firebaseAuth: Auth, private router: Router) { }
 
   userCredentials: any = null;
 
-  /* async register(mail: string, pass: string) {
-    // Asincronismos. async y await
-    // return this.authF.createUserWithEmailAndPassword(email, password)
-    const respuesta = await this.authF.createUserWithEmailAndPassword(mail, pass);
-    this.userCredentials = respuesta.user;
-    console.log(this.userCredentials);
-  } */
-  register(email: string, password: string) 
-  {
-      createUserWithEmailAndPassword(this.authF, email, password).then(() => 
-      {
+  register(email: string, password: string): Promise<string> {
+    return new Promise<string>((resolve, reject) => {
+      createUserWithEmailAndPassword(this.firebaseAuth, email, password).then(() => {
+          localStorage.setItem('token', 'true');
+          this.router.navigate(['/home']);
+          resolve('');
+        })
+        .catch(err => {
+          let mensajeError = '';
+          switch (err.message) {
+            case 'Firebase: Password should be at least 6 characters (auth/weak-password).':
+              mensajeError = 'La contraseña debe tener al menos 6 caracteres';
+              break;
+            case 'Firebase: Error (auth/invalid-email).':
+              mensajeError = 'Ingrese un correo válido.';
+              break;
+            case 'Firebase: Error (auth/email-already-in-use).':
+              mensajeError = 'El correo indicado ya se encuentra registrado.';
+              break;
+            case 'Firebase: Error (auth/missing-password).':
+              mensajeError = 'Ingrese una contraseña.';
+              break;
+            default:
+              mensajeError = 'Error al registrar usuario.';
+              break;
+          }
+          resolve(mensajeError);
+        });
+    });
+  }
+  
+  login(email: string, password: string) : Promise <string> {
+    return new Promise<string>((resolve, reject) => {
+      signInWithEmailAndPassword(this.firebaseAuth, email, password).then(() => {
         localStorage.setItem('token', 'true');
         this.router.navigate(['/home']);
-      }, 
-      err => 
-      {
-        console.log(err.message);
-        this.router.navigate(['/login']);
-        console.log("Error en el registro");
+        resolve('');
+      })
+      .catch( err => {
+        let mensajeError = '';
+        switch (err.message) {
+          case 'Firebase: Error (auth/invalid-credential).':
+            mensajeError = 'Credenciales inválidas.';
+            break;
+          case 'Firebase: Error (auth/invalid-email).':
+            mensajeError = 'Ingrese un correo válido.';
+            break;
+          case 'Firebase: Error (auth/missing-password).':
+            mensajeError = 'Ingrese una contraseña.';
+            break;
+          default:
+            mensajeError = 'Error al iniciar sesión.';
+            break;
+        }
+        resolve(mensajeError);
       });
-  }
-
-  /* login(mail: string, pass: string) {
-    // Asincronismo con .then
-    // return this.authF.signInWithEmailAndPassword(mail, pass)
-    this.authF.signInWithEmailAndPassword(mail, pass).then((credenciales) => {
-      this.userCredentials = credenciales.user;
-    });
-    console.log(this.userCredentials);
-  } */
-
-  //login method
-  login(email: string, password: string) {
-    signInWithEmailAndPassword(this.authF, email, password).then(() => {
-      localStorage.setItem('token', 'true');
-      this.router.navigate(['/home']);
-    }, err => {
-      console.log(err.message);
-      this.router.navigate(['/login']);
     });
   }
 
   logout() {
-    // return this.authF.signOut() 
-    /* this.authF.signOut().then(() => {
+    // return this.firebaseAuth.signOut() 
+    /* this.firebaseAuth.signOut().then(() => {
       this.userCredentials = null;
     }); */
 
-    signOut(this.authF).then(() => {
+    signOut(this.firebaseAuth).then(() => {
       localStorage.removeItem('token');
       this.router.navigate(['/login']);
     });
   }
-
-  /*
-  hasUser() {
-    return this.authF.authState
-  } */
 }
