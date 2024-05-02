@@ -1,32 +1,47 @@
 <main class="main">
-  <div class="banner" >
+  <div>
+    <div class="banner" >
 
-    <div class="centrado"> 
-      <!-- Para navegar por HTML -->
-      <button routerLink='/home' class="botonNavegacion" (click)="buttonHome()">Home</button>
-      <!-- Este lo navego por TS, ver función buttonQuienSoy() -->
-      <button class="botonNavegacion" (click)="buttonQuienSoy()">Quien soy?</button>
-      <!-- Para navegar por HTML -->
-      <button routerLink='/login'  class="botonNavegacion" (click)="buttonLogIn()">Iniciar Sesión</button>
-      <!-- Para navegar por HTML -->
-      <button routerLink='/registrar'  class="botonNavegacion" (click)="buttonRegistrar()">Crear Cuenta</button>
+      <div class="centrado"> 
+        @if(authService.currentUserSig() != null)
+        {
+          <!-- Para navegar por HTML -->
+          <button routerLink='/home' class="botonNavegacion" (click)="buttonHome()">Home</button>
+          <!-- Este lo navego por TS, ver función buttonQuienSoy() -->
+          <button class="botonNavegacion" (click)="buttonQuienSoy()">Quien soy?</button>
+        }
+        <!-- Para navegar por HTML -->
+        @if(authService.currentUserSig() == null)
+        {
+          <button routerLink='/login'  class="botonNavegacion" (click)="buttonLogIn()">Iniciar Sesión</button>
+          <!-- Para navegar por HTML -->
+          <button routerLink='/registrar'  class="botonNavegacion" (click)="buttonRegistrar()">Crear Cuenta</button>
+        }
+      </div> 
+  
+      @if(authService.currentUserSig() != null)
+      {
+        <div class='neon centrado'> 
+          <h4>{{usuario}}</h4> 
+          <button routerLink='/login'  class="item botonPeque" style="margin: 25px" (click)="buttonLogOut()">Cerrar sesión</button>
+        </div>
+      }
+  
+      <div class='neon centrado'> 
+        <h4>{{componenteActivo}}</h4>
+      </div>
+  
+      <!-- npm install @angular/forms -->
+      <!--<div class="centrado" style="display: none;"> 
+        <input [(ngModel)]="componenteActivo">
+      </div> -->
+  
     </div>
-
-    <div class='neon centrado'> 
-      <h4>{{componenteActivo}}</h4>
-    </div>
-
-    <!-- npm install @angular/forms -->
-    <div class="centrado"> 
-      <input [(ngModel)]="componenteActivo">
-    </div>
-
-  </div>
-
-  <div class="container">
     
-    <router-outlet />
-
+    <div class="container centrado">
+      
+      <router-outlet />
+  
+    </div>
   </div>
 </main>
-

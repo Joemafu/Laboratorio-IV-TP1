@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AuthService } from './services/auth.service';
 
 export const routes: Routes = [
     { 

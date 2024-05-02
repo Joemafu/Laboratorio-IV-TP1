@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-quien-soy',
   standalone: true,
@@ -14,8 +13,9 @@ export class QuienSoyComponent {
   diaNacimiento = 23;
   fechaActual = new Date();
 
-  getEdad()
-  {
+  constructor() {}
+
+  getEdad() {
     this.edadJoel = this.fechaActual.getFullYear() - 1992;
     
     if (
@@ -26,6 +26,5 @@ export class QuienSoyComponent {
     }
     return this.edadJoel;
   }
-
     
 }

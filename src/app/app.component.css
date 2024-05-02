@@ -20,7 +20,6 @@
 h4 {
   color: #ffffff; /* Color del texto */
   font-size: 24px; /* Tamaño del texto */
-  margin: 10px 0; /* Margen superior e inferior */
 }
 
 .neon {
@@ -31,7 +30,7 @@ h4 {
 
 .neonTexto {
   color: #00f;
-  font-size: 14px;
+  font-size: 18px;
   font-family: 'beon';
 }
 
@@ -46,16 +45,17 @@ h4 {
 }
 
 .container {
-  display:flex;
-  align-items: space-evenly;
   background-color: rgba(218, 162, 255, 0.6); 
-  padding: 45px; 
-  margin: 35px;
+  padding: 15px; 
+  margin: 15px;
 
   font-family:Arial, Helvetica, sans-serif; 
+  text-shadow: 1px 1px 2px #ffffff; 
   text-shadow: 1px 1px 2px rgba(138,43,226); 
-  color: #ffffff; 
-  font-size: 77;
+  color: rgba(138,43,226);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .botonNavegacion {
@@ -71,6 +71,38 @@ h4 {
   margin-inline: 10px; /* Margen entre los botones */
   font-family: 'beon'; /* Fuente personalizada */
 }
+
+.item
+{
+  margin: 10px;
+  padding: 10px;
+}
+
+.botonPeque {
+  padding: 8px 16px; /* Relleno */
+  font-size: 22px; /* Tamaño del texto */
+  background-color: #ff00ffc2; /* Color de fondo neon */
+  color: #00f; /* Color del texto azul */
+  border: none; /* Quita el borde */
+  border-radius: 25px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s; /* Transición suave del color de fondo */
+  box-shadow: 0px 4px 10px rgba(255, 0, 255, 0.4); /* Sombra */
+  font-family: 'beon'; /* Fuente personalizada */
+}
+
+/* Cambia el color de fondo al pasar el ratón */
+.botonPeque:hover {
+  
+  color: rgb(255, 255, 255); /* Color del texto azul */
+  text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f; /* Efecto de resplandor */
+  background-color: #ff00ff; /* Cambia a un tono más claro al pasar el ratón */
+}
+
+/* Estilo para los botones activos */
+.botonPeque.active {
+  background-color: #cc00cc; /* Color de fondo para el estado activo */
+}
   
 /* Cambia el color de fondo al pasar el ratón */
 .botonNavegacion:hover {
@@ -84,8 +116,3 @@ h4 {
   background-color: #cc00cc; /* Color de fondo para el estado activo */
 }
 
-.item
-{
-  margin: 10px;
-  padding: 10px;
-}

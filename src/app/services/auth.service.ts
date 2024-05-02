@@ -8,20 +8,14 @@ import { UserInterface } from '../interfaces/interface.user';
 })
 export class AuthService {
 
-  static currentUserMail: any = null;
+  static currentUserMail: any;
   constructor (private firebaseAuth: Auth, private router: Router) { 
-    /* this.user$ = new Observable((observer) => {
-      this.firebaseAuth.onAuthStateChanged((user) => {
-        observer.next(user);
-      });
-    }); */
   }
-
-  //user$ = user(this.firebaseAuth);
+  
+  user$ = user(this.firebaseAuth);
   currentUserSig = signal< UserInterface | null | undefined>(undefined);
 
   
-  //user$ = this.firebaseAuth.onAuthStateChanged.bind(this.firebaseAuth);
 
   register(email: string, password: string): Promise<string> {
     return new Promise<string>((resolve, reject) => {
@@ -31,15 +25,9 @@ export class AuthService {
         if (user)
           {
             AuthService.currentUserMail = user.email;
-            localStorage.setItem('token', 'true');
             this.router.navigate(['/home']);
-            console.log(AuthService.currentUserMail);
             resolve('');
-          } 
-        else
-          {
-            console.log('Acá hay un problemita. No se pudo obtener el usuario');
-          }     
+          }   
         })
         .catch(err => {
           let mensajeError = '';
@@ -73,15 +61,9 @@ export class AuthService {
         if (user)
           {
             AuthService.currentUserMail = user.email;
-            localStorage.setItem('token', 'true');
             this.router.navigate(['/home']);
-            console.log(AuthService.currentUserMail);
             resolve('');
-          } 
-          else
-          {
-            console.log('Acá hay un problemita. No se pudo obtener el usuario');
-          }       
+          }      
       })
       .catch( err => {
         let mensajeError = '';
@@ -105,14 +87,8 @@ export class AuthService {
   }
 
   logout() {
-    // return this.firebaseAuth.signOut() 
-    /* this.firebaseAuth.signOut().then(() => {
-      this.userCredentials = null;
-    }); */
-
     signOut(this.firebaseAuth).then(() => {
       AuthService.currentUserMail = null;
-      localStorage.removeItem('token');
       this.router.navigate(['/login']);
     });
   }
