@@ -3,7 +3,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from './services/auth.service';
-import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -65,5 +64,4 @@ export class AppComponent implements OnInit{
     this.authS.logout();
     this.buttonLogIn();
   }
-
 }
