@@ -11,10 +11,10 @@ import { AuthService,   } from '../../services/auth.service'
 })
 export class RegisterComponent {
 
-  mail: string = "";
-  pass: string ="";
   title: string="REGISTRARSE";
   alert: string = "";
+  mail: string = "";
+  pass: string ="";
 
   constructor (private authS: AuthService) {
   }
@@ -22,7 +22,7 @@ export class RegisterComponent {
   buttonRegistrarse() {
     this.authS.register(this.mail, this.pass)
       .then(alert => {
-        this.alert = alert; // El mensaje de error se asigna al alert para mostrarlo en el HTML
+        this.alert = alert;
         this.mail = "";
         this.pass = "";
       });

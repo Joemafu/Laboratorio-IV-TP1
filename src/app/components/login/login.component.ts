@@ -11,7 +11,7 @@ import { AuthService,   } from '../../services/auth.service'
 })
 export class LoginComponent {
 
-  usuario: string = "";
+  mail: string = "";
   pass: string ="";
   title: string="INICIAR SESIÓN";
   alert: string = "";
@@ -21,28 +21,28 @@ export class LoginComponent {
 
   buttonDemoUno()
   {
-    this.usuario="Admin@correo.com";
+    this.mail="Admin@correo.com";
     this.pass="administrador123";
   }
 
   buttonDemoDos()
   {
-    this.usuario="Bruma@correo.com";
+    this.mail="Bruma@correo.com";
     this.pass="bruma123";
   }
 
   buttonDemoTres()
   {
-    this.usuario="Joel@correo.com";
+    this.mail="Joel@correo.com";
     this.pass="joel123";
   }
 
   buttonEntrar()
   {
-    this.authS.login(this.usuario, this.pass)
+    this.authS.login(this.mail, this.pass)
     .then(alert => {
-      this.alert = alert; // El mensaje de error se asigna al alert para mostrarlo en el HTML
-      this.usuario = "";
+      this.alert = alert;
+      this.mail = "";
       this.pass = "";
     });
   }

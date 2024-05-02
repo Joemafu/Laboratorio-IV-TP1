@@ -1,21 +1,45 @@
-import { Injectable } from '@angular/core';
-import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from '@angular/fire/auth';
+import { Injectable, signal } from '@angular/core';
+import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, user, User} from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { UserInterface } from '../interfaces/interface.user';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor (private firebaseAuth: Auth, private router: Router) { }
+  static currentUserMail: any = null;
+  constructor (private firebaseAuth: Auth, private router: Router) { 
+    /* this.user$ = new Observable((observer) => {
+      this.firebaseAuth.onAuthStateChanged((user) => {
+        observer.next(user);
+      });
+    }); */
+  }
 
-  userCredentials: any = null;
+  //user$ = user(this.firebaseAuth);
+  currentUserSig = signal< UserInterface | null | undefined>(undefined);
+
+  
+  //user$ = this.firebaseAuth.onAuthStateChanged.bind(this.firebaseAuth);
 
   register(email: string, password: string): Promise<string> {
     return new Promise<string>((resolve, reject) => {
-      createUserWithEmailAndPassword(this.firebaseAuth, email, password).then(() => {
-          localStorage.setItem('token', 'true');
-          this.router.navigate(['/home']);
-          resolve('');
+      createUserWithEmailAndPassword(this.firebaseAuth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        if (user)
+          {
+            AuthService.currentUserMail = user.email;
+            localStorage.setItem('token', 'true');
+            this.router.navigate(['/home']);
+            console.log(AuthService.currentUserMail);
+            resolve('');
+          } 
+        else
+          {
+            console.log('Acá hay un problemita. No se pudo obtener el usuario');
+          }     
         })
         .catch(err => {
           let mensajeError = '';
@@ -43,10 +67,21 @@ export class AuthService {
   
   login(email: string, password: string) : Promise <string> {
     return new Promise<string>((resolve, reject) => {
-      signInWithEmailAndPassword(this.firebaseAuth, email, password).then(() => {
-        localStorage.setItem('token', 'true');
-        this.router.navigate(['/home']);
-        resolve('');
+      signInWithEmailAndPassword(this.firebaseAuth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        if (user)
+          {
+            AuthService.currentUserMail = user.email;
+            localStorage.setItem('token', 'true');
+            this.router.navigate(['/home']);
+            console.log(AuthService.currentUserMail);
+            resolve('');
+          } 
+          else
+          {
+            console.log('Acá hay un problemita. No se pudo obtener el usuario');
+          }       
       })
       .catch( err => {
         let mensajeError = '';
@@ -76,6 +111,7 @@ export class AuthService {
     }); */
 
     signOut(this.firebaseAuth).then(() => {
+      AuthService.currentUserMail = null;
       localStorage.removeItem('token');
       this.router.navigate(['/login']);
     });

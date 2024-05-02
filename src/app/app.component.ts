@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -13,26 +14,26 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'Sala de Juegos';
 
-  test= 'texto de prueba';
+  componenteActivo= '';
 
   // Para navegar por TypeScript
   private router = inject(Router);
   // Navego con typescript
   buttonQuienSoy() {
-    this.test="Sobre mí";
+    this.componenteActivo="Sobre mí";
     this.router.navigateByUrl('/quien-soy');
   } 
 
   buttonHome() {
-    this.test="Home";
+    this.componenteActivo="Home";
   }
 
   buttonLogIn() {
-    this.test="Login";
+    this.componenteActivo="Login";
   }
 
   buttonRegistrar() {
-    this.test="Registrar";
+    this.componenteActivo="Registrar";
   }
 
 }

@@ -8,21 +8,15 @@
         <p id="mensajeError" style="color: red">{{alert}}</p>
     </div>
     <div class="centrado">
-        <label class="item" for="correo">Correo</label>
-        <input [(ngModel)]="mail" class="item" type="text" name="correo" id="correo">
-    </div>
-    <!-- <div class="centrado">
-        <label class="item" for="usuario">Nombre de usuario</label>
-        <input [(ngModel)]="username" class="item" type="text" name="usuario" id="usuario">
-    </div> -->
-    <div class="centrado">
-        <label  class="item" for="pass">Contraseña</label>
-        <input  [(ngModel)]="pass" class="item" type="password" name="pass" id="pass">
+        <!-- <label class="item" for="mail">mail</label> -->
+        <input [(ngModel)]="mail" placeholder="Correo" class="item" type="text" name="mail" id="mail">
     </div>
 
-    <!-- <div class="centrado">
-        <button class="item botonNavegacion" (click)="onSubmit()">Registrarse</button>
-    </div> -->
+    <div class="centrado">
+        <!-- <label  class="item" for="pass">Contraseña</label> -->
+        <input  [(ngModel)]="pass" placeholder="Contraseña" class="item" type="password" name="pass" id="pass">
+    </div>
+
     <div class="centrado">
         <button class="item botonNavegacion" (click)="buttonRegistrarse()">Registrarse</button>
     </div>
