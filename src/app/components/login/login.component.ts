@@ -18,9 +18,7 @@ export class LoginComponent {
   pass: string ="";
   title: string="INICIAR SESIÓN";
 
-  //esto funciona pero se llama siempre y el usuario se registra siempre
   constructor (private authS: AuthService) {
-    /* authS.register('joe_mafu@hotmail.com', '123456'); */
   }
 
   buttonDemoUno()
@@ -43,16 +41,19 @@ export class LoginComponent {
 
   buttonEntrar()
   {
-    this.usuario="[Usuario]";
-    this.pass="[Contraseña]";
+    try
+    {
+      this.authS.login(this.usuario, this.pass);
+    }
+    catch(e)
+    {
+      console.log(e);
+      console.log("Error en el login");
+    }
   }
 
   buttonRegistrarse()
   {
-    /* this.usuario=[Usuario];
-    this.pass="[Contraseña]"; */
-    /* console.log(this.usuario);
-    console.log(this.pass); */
     try{
       this.authS.register(this.usuario, this.pass);
     }
@@ -60,10 +61,5 @@ export class LoginComponent {
       console.log(e);
       console.log("Error en el registro");
     }
-    
   }
-
-
-  
-
 }

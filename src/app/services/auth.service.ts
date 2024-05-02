@@ -49,7 +49,7 @@ export class AuthService {
       localStorage.setItem('token', 'true');
       this.router.navigate(['/home']);
     }, err => {
-      alert(err.message);
+      console.log(err.message);
       this.router.navigate(['/login']);
     });
   }
