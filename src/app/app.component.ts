@@ -19,8 +19,6 @@ export class AppComponent implements OnInit{
   logeado: boolean = false;
   constructor (private authS: AuthService) {}
 
-
-
   ngOnInit(): void {
     this.authService.user$.subscribe((user) => {
       if (user) {

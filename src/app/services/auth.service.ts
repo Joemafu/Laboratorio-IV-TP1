@@ -8,14 +8,11 @@ import { UserInterface } from '../interfaces/interface.user';
 })
 export class AuthService {
 
-  static currentUserMail: any;
   constructor (private firebaseAuth: Auth, private router: Router) { 
   }
   
   user$ = user(this.firebaseAuth);
   currentUserSig = signal< UserInterface | null | undefined>(undefined);
-
-  
 
   register(email: string, password: string): Promise<string> {
     return new Promise<string>((resolve, reject) => {
@@ -24,7 +21,6 @@ export class AuthService {
         const user = userCredential.user;
         if (user)
           {
-            AuthService.currentUserMail = user.email;
             this.router.navigate(['/home']);
             resolve('');
           }   
@@ -60,7 +56,6 @@ export class AuthService {
         const user = userCredential.user;
         if (user)
           {
-            AuthService.currentUserMail = user.email;
             this.router.navigate(['/home']);
             resolve('');
           }      
@@ -88,7 +83,6 @@ export class AuthService {
 
   logout() {
     signOut(this.firebaseAuth).then(() => {
-      AuthService.currentUserMail = null;
       this.router.navigate(['/login']);
     });
   }
