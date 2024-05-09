@@ -33,6 +33,26 @@ export const routes: Routes = [
         path: 'registrar',
         loadComponent: () => import('./components/register/register.component').then(c => c.RegisterComponent),
     },
+    {
+        // Lazy Loading
+        path: 'mayor-menor',
+        loadComponent: () => import('./components/mayor-menor/mayor-menor.component').then(c => c.MayorMenorComponent),
+    },
+    {
+        // Lazy Loading
+        path: 'preguntados',
+        loadComponent: () => import('./components/preguntados/preguntados.component').then(c => c.PreguntadosComponent),
+    },
+    {
+        // Lazy Loading
+        path: 'ahorcado',
+        loadComponent: () => import('./components/ahorcado/ahorcado.component').then(c => c.AhorcadoComponent),
+    },
+    {
+        // Lazy Loading
+        path: 'sitio-en-construccion',
+        loadComponent: () => import('./components/sitio-en-construccion/sitio-en-construccion.component').then(c => c.SitioEnConstruccionComponent),
+    },
     { 
         path: '**', redirectTo: 'error'
     }

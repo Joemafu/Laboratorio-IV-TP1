@@ -1,4 +1,16 @@
 /* 
+
+  Sprint 1 (Clase 02):
+    - Armado del proyecto
+    - Subido a heroku o firebase.
+    - Componente de Login.
+    - Componente Home.
+    - Componente “Quién Soy”
+      ● Datos personales del alumno.
+      ● Imagen del alumno
+      ● Explicación del juego propio
+    - Favicon
+
   Sprint 2 (Clase 03)
 
     - Componente Home
@@ -23,6 +35,56 @@
       ● Tiene que generar un nuevo usuario y redirigir al home al crearlo exitosamente, es
       decir, loguear al usuario automáticamente.
       ● Emitir mensaje si el usuario ya se encuentra registrado. (NO USAR ALERT)
+
+
+  Sprint 3 (Clase 04)
+
+    - Incorporar el chat
+      ● Solamente usuarios logueados podrán acceder a la sala de chat.
+        ○ Debemos marcar el usuario y hora que envió el mensaje
+
+    - Incorporar módulos y loadchildren
+    - Incorporar los juegos
+      ● Ahorcado
+        ○ No se debe ingresar datos desde el teclado. Utilizar botones para el
+        ingreso de las letras.
+
+      ● Mayor o Menor
+        ○ Desde un mazo de carta se va a preguntar si la siguiente es mayor o menor.
+        El jugador sumará un punto ante cada carta que adivine.
+
+*/
+
+/* 
+
+  Sprint 1 (Clase 02):
+
+      ● Explicación del juego propio
+
+  Sprint 2 (Clase 03)
+
+    - Componente Login
+      ● Registrar el log de ese usuario en firebase.
+        ○ En caso de que sea exitoso registrar:
+          ■ Usuario
+          ■ Fecha de ingreso
+
+  Sprint 3 (Clase 04)
+
+    - Incorporar el chat
+      ● Solamente usuarios logueados podrán acceder a la sala de chat.
+        ○ Debemos marcar el usuario y hora que envió el mensaje
+
+    - Incorporar loadchildren
+    - Incorporar los juegos
+
+      ● Ahorcado
+        ○ No se debe ingresar datos desde el teclado. Utilizar botones para el
+        ingreso de las letras.
+      ● Mayor o Menor
+        ○ Desde un mazo de carta se va a preguntar si la siguiente es mayor o menor.
+        El jugador sumará un punto ante cada carta que adivine.
+        
  */
 
 import { bootstrapApplication } from '@angular/platform-browser';
