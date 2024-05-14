@@ -1,16 +1,15 @@
-<p>chat works!</p>
+@if(mensajes$ | async; as mensajes) {
+    <br><br><br><br><br>
+
+    @for (mensaje of mensajes; track mensaje) {
+
+        <p>
+            {{mensaje.mail + ': ' + mensaje.content}}
+        </p>
+    }
+}
 
 <div>
-    <input type="text" [(ngModel)]="message" (keyup.enter)="sendMessage()">
-    <button (click)="sendMessage()">Send</button>
+    <input type="text" [(ngModel)]="message" (keyup.enter)="sendMessage()" id="messageInput" placeholder="Escribe un mensaje...">
+    <button (click)="sendMessage()">Enviar</button>
 </div>
-
-
-<!-- <div id="chatbox">
-    <div id="chatbox">
-        <div class="message">Usuario1: ¡Hola a todos!</div>
-        <div class="message">Usuario2: ¿Cómo están?</div>
-    </div>
-    <input type="text" id="messageInput" placeholder="Escribe un mensaje...">
-</div> -->
-

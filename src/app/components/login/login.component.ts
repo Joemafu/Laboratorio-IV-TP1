@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService,   } from '../../services/auth.service'
 
@@ -16,8 +16,11 @@ export class LoginComponent {
   title: string="INICIAR SESIÓN";
   alert: string = "";
 
-  constructor (private authS: AuthService) {
-  }
+  authS = inject(AuthService);
+
+  // Forma vieja de inyectar el servicio
+  /* constructor (private authS: AuthService) {
+  } */
 
   buttonDemoUno()
   {

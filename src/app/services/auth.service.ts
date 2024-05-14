@@ -2,17 +2,19 @@ import { Injectable, signal } from '@angular/core';
 import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, user, User} from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { UserInterface } from '../interfaces/interface.user';
+import { UserInterface } from '../interfaces/user.interface';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  constructor (private firebaseAuth: Auth, private router: Router) { 
-  }
   
   user$ = user(this.firebaseAuth);
-  currentUserSig = signal< UserInterface | null | undefined>(undefined);
+  currentUserSig = signal<UserInterface | null | undefined>(undefined);
+  public currentUser: string = '';
+
+  constructor (private firebaseAuth: Auth, private router: Router) { 
+
+  }
 
   register(email: string, password: string): Promise<string> {
     return new Promise<string>((resolve, reject) => {
@@ -23,6 +25,9 @@ export class AuthService {
           {
             this.router.navigate(['/home']);
             resolve('');
+            if (user.email) {
+              this.currentUser = user.email;
+            }            
           }   
         })
         .catch(err => {
@@ -50,7 +55,7 @@ export class AuthService {
   }
   
   login(email: string, password: string) : Promise <string> {
-    return new Promise<string>((resolve, reject) => {
+    return new Promise<string>((resolve) => {
       signInWithEmailAndPassword(this.firebaseAuth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -58,6 +63,9 @@ export class AuthService {
           {
             this.router.navigate(['/home']);
             resolve('');
+            if (user.email) {
+              this.currentUser = user.email;
+            }     
           }      
       })
       .catch( err => {

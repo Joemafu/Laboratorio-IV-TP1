@@ -9,12 +9,12 @@
     </div>
     <div class="centrado">
         <!-- <label class="item" for="mail">mail</label> -->
-        <input [(ngModel)]="mail" placeholder="Correo" class="item" type="text" name="mail" id="mail">
+        <input [(ngModel)]="mail" placeholder="Correo" class="item" type="text" name="mail" id="mail" (keyup.enter)="buttonEntrar()">
     </div>
 
     <div class="centrado">
         <!-- <label  class="item" for="pass">Contraseña</label> -->
-        <input  [(ngModel)]="pass" placeholder="Contraseña" class="item" type="password" name="pass" id="pass">
+        <input  [(ngModel)]="pass" placeholder="Contraseña" class="item" type="password" name="pass" id="pass" (keyup.enter)="buttonEntrar()">
     </div>
 
     <div class="centrado">

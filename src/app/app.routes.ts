@@ -53,6 +53,11 @@ export const routes: Routes = [
         path: 'sitio-en-construccion',
         loadComponent: () => import('./components/sitio-en-construccion/sitio-en-construccion.component').then(c => c.SitioEnConstruccionComponent),
     },
+    {
+        // Lazy Loading
+        path: 'chat',
+        loadComponent: () => import('./components/chat/chat.component').then(c => c.ChatComponent),
+    },
     { 
         path: '**', redirectTo: 'error'
     }

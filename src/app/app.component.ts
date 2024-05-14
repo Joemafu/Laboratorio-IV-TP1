@@ -1,8 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from './services/auth.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -11,16 +12,16 @@ import { AuthService } from './services/auth.service';
   styleUrl: './app.component.css'
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, OnDestroy {
   title: string = 'Sala de Juegos';
   authService: AuthService = inject(AuthService);
   componenteActivo: string = '';
   usuario: string = '';
   logeado: boolean = false;
-  constructor (private authS: AuthService) {}
+  public subscription: Subscription = new Subscription();
 
   ngOnInit(): void {
-    this.authService.user$.subscribe((user) => {
+    this.subscription = this.authService.user$.subscribe((user) => {
       if (user) {
         this.authService.currentUserSig.set({
           mail: user.email!,
@@ -36,6 +37,10 @@ export class AppComponent implements OnInit{
         console.log('No hay usuario logueado');        
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   // Para navegar por TypeScript
@@ -59,7 +64,7 @@ export class AppComponent implements OnInit{
   }
 
   buttonLogOut() {    
-    this.authS.logout();
+    this.authService.logout();
     this.buttonLogIn();
   }
 }
