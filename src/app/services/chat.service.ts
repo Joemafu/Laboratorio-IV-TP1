@@ -1,4 +1,4 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { Message } from '../interfaces/message.interface';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
@@ -10,16 +10,14 @@ import { Firestore, CollectionReference, addDoc, collection, collectionData, que
 export class ChatService {
 
   private PATH = 'mensajes';
-  private messages$!: Observable<Message[]>;
-  private db = inject(Firestore);  
+  public messages$!: Observable<Message[]>;
+  public messages = signal<Message[] | null | undefined>(undefined);
+  private db = inject(Firestore); 
 
   constructor() {
     let mensajes = collection(this.db, this.PATH);
     const consulta = query(mensajes, orderBy('fecha', 'asc'));
     this.messages$ = collectionData(consulta) as Observable<Message[]>;   
-    console.log(this.messages$.forEach(element => {
-        console.log(element);
-    }));
   }
 
   public getAll() {

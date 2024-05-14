@@ -1,10 +1,10 @@
-@if(mensajes$ | async; as mensajes) {
+@if(messages ) {
     <br><br><br><br><br>
 
-    @for (mensaje of mensajes; track mensaje) {
+    @for (message of messages; track message) {
 
         <p>
-            {{mensaje.mail + ': ' + mensaje.content}}
+            {{message.mail + ': ' + message.content}}
         </p>
     }
 }

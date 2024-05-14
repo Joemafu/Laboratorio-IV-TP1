@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, user, User} from '@angular/fire/auth';
+import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, user} from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UserInterface } from '../interfaces/user.interface';
@@ -8,13 +8,11 @@ import { UserInterface } from '../interfaces/user.interface';
 })
 export class AuthService {
   
-  user$ = user(this.firebaseAuth);
-  currentUserSig = signal<UserInterface | null | undefined>(undefined);
+  public user$ = user(this.firebaseAuth);
+  public currentUserSig = signal<UserInterface | null | undefined>(undefined);
   public currentUser: string = '';
 
-  constructor (private firebaseAuth: Auth, private router: Router) { 
-
-  }
+  constructor (private firebaseAuth: Auth, private router: Router) { }
 
   register(email: string, password: string): Promise<string> {
     return new Promise<string>((resolve, reject) => {

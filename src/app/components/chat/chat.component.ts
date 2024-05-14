@@ -5,6 +5,7 @@ import { Message } from '../../interfaces/message.interface';
 import { Observable, Subscription } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chat',
@@ -15,9 +16,10 @@ import { AuthService } from '../../services/auth.service';
 })
 export class ChatComponent implements OnInit, OnDestroy {
 
+  protected messages: Message[] = [];
   protected message: string = '';
-  protected mensajes$: Observable<Message[]> = new Observable<Message[]>();
   private user: string = '';
+  private router = inject(Router);
 
   // Inyectamos el servicio (angular 17)
   private chatService = inject(ChatService);
@@ -28,23 +30,22 @@ export class ChatComponent implements OnInit, OnDestroy {
   // Inyectamos el servicio (angular 12)
   // constructor(private messageSrv: MessageService) { }
 
-  constructor() { 
+  ngOnInit() { 
     this.authSubscription = this.authService.user$.subscribe((user) => {
       if (user) {
-        
         this.user = user.email!;
       } else {
         this.user="";     
       }
-    });/* 
+    });
     this.chatSubscription = this.chatService.messages$.subscribe((mensajes) => {
       if(mensajes) {
-
+        this.messages = mensajes;
       }
       else {
-
+        this.messages = [];
       }
-    }); */
+    });
   }
 
   ngOnDestroy(): void {
@@ -52,28 +53,29 @@ export class ChatComponent implements OnInit, OnDestroy {
     this.authSubscription.unsubscribe();
   }
 
-  ngOnInit(): void {
-    this.getMessages();
-  }
-
   private getMessages() {
-    this.mensajes$ = this.chatService.getAll();
+
   }
 
   protected sendMessage() {
-
-    if(this.authService.currentUserSig() != null)
-    {
-      const obj: Message = {
-        content: this.message,
-        date: '',
-        mail: this.user
+    if (this.message != '') {
+      if(this.authService.currentUserSig() != null)
+      {
+        const obj: Message = {
+          content: this.message,
+          date: '',
+          mail: this.user
+        }
+  
+        this.chatService.agregarMensaje(obj).then(() => {
+          console.log(obj.mail, 'dice:', obj.content);
+          this.message = '';
+        })
       }
-
-      this.chatService.agregarMensaje(obj).then(() => {
-        console.log(obj.mail, 'dice:', obj.content);
-        this.message = '';
-      })
-    }
+      else
+      {
+        this.router.navigateByUrl('/login');
+      }
+    }    
   }
 }
