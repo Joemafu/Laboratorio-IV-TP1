@@ -17,8 +17,8 @@ export class AppComponent implements OnInit, OnDestroy {
   authService: AuthService = inject(AuthService);
   componenteActivo: string = '';
   usuario: string = '';
-  logeado: boolean = false;
   public subscription: Subscription = new Subscription();
+  private router = inject(Router);
 
   ngOnInit(): void {
     this.subscription = this.authService.user$.subscribe((user) => {
@@ -27,14 +27,10 @@ export class AppComponent implements OnInit, OnDestroy {
           mail: user.email!,
           pass: "",
         });
-        console.log('Usuario logueado: ', user.email);
         this.usuario = user.email!;
-        this.logeado = true;
       } else {
         this.usuario="";
-        this.logeado = false;
-        this.authService.currentUserSig.set(null);
-        console.log('No hay usuario logueado');        
+        this.authService.currentUserSig.set(null);    
       }
     });
   }
@@ -43,9 +39,6 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  // Para navegar por TypeScript
-  private router = inject(Router);
-  // Navego con typescript
   buttonQuienSoy() {
     this.componenteActivo="Sobre mí";
     this.router.navigateByUrl('/quien-soy');
@@ -53,14 +46,17 @@ export class AppComponent implements OnInit, OnDestroy {
 
   buttonHome() {
     this.componenteActivo="Home";
+    this.router.navigateByUrl('/home');
   }
 
   buttonLogIn() {
     this.componenteActivo="Login";
+    this.router.navigateByUrl('/login');
   }
 
   buttonRegistrar() {
-    this.componenteActivo="Registrar";
+    this.componenteActivo="Register";
+    this.router.navigateByUrl('/registrar');
   }
 
   buttonLogOut() {    

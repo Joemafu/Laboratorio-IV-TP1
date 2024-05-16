@@ -1,21 +1,22 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, user} from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { UserInterface } from '../interfaces/user.interface';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   
+  private firebaseAuth: Auth = inject(Auth);
+  private router: Router = inject(Router);
   public user$ = user(this.firebaseAuth);
   public currentUserSig = signal<UserInterface | null | undefined>(undefined);
   public currentUser: string = '';
 
-  constructor (private firebaseAuth: Auth, private router: Router) { }
+  constructor () { }
 
   register(email: string, password: string): Promise<string> {
-    return new Promise<string>((resolve, reject) => {
+    return new Promise<string>((resolve) => {
       createUserWithEmailAndPassword(this.firebaseAuth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
