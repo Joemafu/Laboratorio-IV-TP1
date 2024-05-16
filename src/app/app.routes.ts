@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
+import { canActivate, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
 
 export const routes: Routes = [
-    { 
-        path: 'test', redirectTo: 'home', 
-    },
     { 
         path: '', redirectTo: 'home', pathMatch: 'full'
     },
@@ -11,16 +12,19 @@ export const routes: Routes = [
         // Lazy Loading
         path: 'login',
         loadComponent: () => import('./components/login/login.component').then(c => c.LoginComponent),
+        ...canActivate(() => redirectLoggedInToHome()),
     },
     {
         // Lazy Loading
         path: 'quien-soy',
-        loadComponent: () => import('./components/quien-soy/quien-soy.component').then(c => c.QuienSoyComponent),    
+        loadComponent: () => import('./components/quien-soy/quien-soy.component').then(c => c.QuienSoyComponent),
+        ...canActivate(() => redirectUnauthorizedToLogin()),
     },
     {
         // Lazy Loading 
         path: 'home',
         loadComponent: () => import('./components/home/home.component').then(c => c.HomeComponent),
+        ...canActivate(() => redirectUnauthorizedToLogin()),
     },
     {
         // Lazy Loading
@@ -31,21 +35,25 @@ export const routes: Routes = [
         // Lazy Loading
         path: 'registrar',
         loadComponent: () => import('./components/register/register.component').then(c => c.RegisterComponent),
+        ...canActivate(() => redirectLoggedInToHome()),
     },
     {
         // Lazy Loading
         path: 'mayor-menor',
         loadComponent: () => import('./components/mayor-menor/mayor-menor.component').then(c => c.MayorMenorComponent),
+        ...canActivate(() => redirectUnauthorizedToLogin()),
     },
     {
         // Lazy Loading
         path: 'preguntados',
         loadComponent: () => import('./components/preguntados/preguntados.component').then(c => c.PreguntadosComponent),
+        ...canActivate(() => redirectUnauthorizedToLogin()),
     },
     {
         // Lazy Loading
         path: 'ahorcado',
         loadComponent: () => import('./components/ahorcado/ahorcado.component').then(c => c.AhorcadoComponent),
+        ...canActivate(() => redirectUnauthorizedToLogin()),
     },
     {
         // Lazy Loading
