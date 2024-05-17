@@ -23,8 +23,8 @@ export class HomeComponent {
     this.router.navigateByUrl('/sitio-en-construccion');
   }
   buttonMayorMenor() {  
-    // this.router.navigateByUrl('/mayor-menor');
-    this.router.navigateByUrl('/sitio-en-construccion');
+    this.router.navigateByUrl('/mayor-menor');
+    // this.router.navigateByUrl('/sitio-en-construccion');
   }
   buttonPreguntados() {
     // this.router.navigateByUrl('/preguntados');

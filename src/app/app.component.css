@@ -15,19 +15,19 @@
 }
 
 .banner {
-  background-color: rgba(58, 30, 83,0.2); /* Color de fondo con opacidad */
-  padding: 35px; /* Relleno */
+  background-color: rgba(58, 30, 83,0.2); 
+  padding: 35px; 
 }
   
 h4 {
-  color: #ffffff; /* Color del texto */
-  font-size: 24px; /* Tamaño del texto */
+  color: #ffffff; 
+  font-size: 24px; 
 }
 
 .neon {
-  color: #00f; /* Color del texto azul */
+  color: #00f; 
   text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f; /* Efecto de resplandor */
-  font-family: 'beon'; /* Fuente personalizada */
+  font-family: 'beon'; 
 }
 
 .neonTexto {
@@ -37,13 +37,13 @@ h4 {
 }
 
 .neonTexto:hover {
-  color: rgb(255, 255, 255); /* Color del texto azul */
+  color: rgb(255, 255, 255); 
   text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f; /* Efecto de resplandor */
 }
 
 .centrado {
-  display: flex; /* Flexbox */
-  justify-content: center; /* Centra horizontalmente */
+  display: flex; 
+  justify-content: center; 
 }
 
 .container {
@@ -60,17 +60,17 @@ h4 {
 }
 
 .botonNavegacion {
-  padding: 10px 20px; /* Relleno */
-  background-color: #ff00ffc2; /* Color de fondo neon */
-  color: #00f; /* Color del texto azul */
-  border: none; /* Quita el borde */
-  border-radius: 25px; /* Bordes redondeados */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-  transition: background-color 0.3s; /* Transición suave del color de fondo */
-  font-size: 28px; /* Tamaño del texto */
-  box-shadow: 0px 4px 10px rgba(255, 0, 255, 0.4); /* Sombra */
-  margin-inline: 10px; /* Margen entre los botones */
-  font-family: 'beon'; /* Fuente personalizada */
+  padding: 10px 20px;
+  background-color: #ff00ffc2; 
+  color: #00f; 
+  border: none; 
+  border-radius: 25px;
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+  font-size: 28px; 
+  box-shadow: 0px 4px 10px rgba(255, 0, 255, 0.4); 
+  margin-inline: 10px; 
+  font-family: 'beon'; 
 }
 
 .item
@@ -80,40 +80,40 @@ h4 {
 }
 
 .botonPeque {
-  padding: 8px 16px; /* Relleno */
-  font-size: 22px; /* Tamaño del texto */
-  background-color: #ff00ffc2; /* Color de fondo neon */
-  color: #00f; /* Color del texto azul */
-  border: none; /* Quita el borde */
-  border-radius: 25px; /* Bordes redondeados */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-  transition: background-color 0.3s; /* Transición suave del color de fondo */
-  box-shadow: 0px 4px 10px rgba(255, 0, 255, 0.4); /* Sombra */
-  font-family: 'beon'; /* Fuente personalizada */
+  padding: 8px 16px; 
+  font-size: 22px;
+  background-color: #ff00ffc2; 
+  color: #00f; 
+  border: none; 
+  border-radius: 25px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+  box-shadow: 0px 4px 10px rgba(255, 0, 255, 0.4); 
+  font-family: 'beon'; 
 }
 
-/* Cambia el color de fondo al pasar el ratón */
+
 .botonPeque:hover {
   
-  color: rgb(255, 255, 255); /* Color del texto azul */
+  color: rgb(255, 255, 255); 
   text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f; /* Efecto de resplandor */
-  background-color: #ff00ff; /* Cambia a un tono más claro al pasar el ratón */
+  background-color: #ff00ff; 
 }
 
-/* Estilo para los botones activos */
+
 .botonPeque.active {
-  background-color: #cc00cc; /* Color de fondo para el estado activo */
+  background-color: #cc00cc; 
 }
   
-/* Cambia el color de fondo al pasar el ratón */
+
 .botonNavegacion:hover {
-  color: rgb(255, 255, 255); /* Color del texto azul */
+  color: rgb(255, 255, 255);
   text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f; /* Efecto de resplandor */
-  background-color: #ff00ff; /* Cambia a un tono más claro al pasar el ratón */
+  background-color: #ff00ff; 
 }
 
-/* Estilo para los botones activos */
+
 .botonNavegacion.active {
-  background-color: #cc00cc; /* Color de fondo para el estado activo */
+  background-color: #cc00cc; 
 }
 

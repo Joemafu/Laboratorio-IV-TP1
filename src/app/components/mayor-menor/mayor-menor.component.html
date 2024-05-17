@@ -1,1 +1,14 @@
-<p>mayor-menor works!</p>
+<div>
+    <h1 class="centrado">Mayor o menor?</h1>
+
+    <div>
+        <h2 class="centrado">Carta Actual: {{ ultimoNaipe?.numero }} de {{ultimoNaipe?.palo}}</h2>
+        <div class="centrado">
+            <button class=" item botonNavegacion" (click)="elegirMayor()">Mayor ▲</button>
+            <button class=" item botonNavegacion" (click)="elegirMenor()">Menor ▼</button>
+        </div>        
+        <h4 class="centrado">Puntaje: {{puntaje}}</h4>
+    </div>
+        
+  </div>
+  
