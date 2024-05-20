@@ -1,1 +1,20 @@
 @import '../../app.component.css';
+
+.botonNavegacion:disabled
+{
+    background-color: #a5167a;
+    color: #666666;
+    text-shadow: none;
+    cursor: not-allowed;
+}
+
+.palabra {
+    font-size: 80px;
+    margin: 20px 0;
+}
+
+.fila-teclas button {
+    margin: 2px;
+    padding: 10px;
+    width: 60px;
+}

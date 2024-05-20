@@ -70,7 +70,6 @@ export class ChatComponent implements OnInit, OnDestroy {
         }
 
         this.chatService.agregarMensaje(obj).then(() => {
-          console.log(obj.mail, 'dice:', obj.content);
           this.message = '';
         })
       }
@@ -85,21 +84,13 @@ export class ChatComponent implements OnInit, OnDestroy {
     return mensaje.mail === this.user;
   }
 
-/*   formatearHora(timestamp: any): void {
-
-    const date = timestamp.toDate();
-
-    const formateada = date.toLocaleTimeString();
-    console.log("formateada: ", formateada);
-  } */
-
   formatearHora(timestamp: any): string {
 
     const date = timestamp.toDate();
 
     // Obtener día y mes
     const day = date.getDate();
-    const month = date.getMonth() + 1; // Se suma 1 ya que los meses son indexados desde 0
+    const month = date.getMonth() + 1; 
     const year = date.getYear();
 
     // Formatear día y mes con ceros a la izquierda si es necesario

@@ -2,17 +2,16 @@
 
 #chatbox {
     position: fixed;
-    bottom: 80px; /* Cambia esto según sea necesario */
-    right: 20px; /* Cambia esto según sea necesario */
-    width: 300px; /* Cambia esto según sea necesario */
-    height: 400px; /* Cambia esto según sea necesario */
+    bottom: 80px; 
+    right: 20px; 
+    width: 300px; 
+    height: 400px; 
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow-y: scroll;
 }
 
-/* Estilos para los mensajes */
 .message {
     padding: 10px;
     margin-bottom: 5px;
@@ -20,14 +19,12 @@
     border-radius: 5px;
 }
 
-/* Estilos para el área de entrada */
 #messageInput {
     position: fixed;
-    bottom: 10px; /* Cambia esto según sea necesario */
-    right: 15px; /* Cambia esto según sea necesario */
-    width: 270px; /* Cambia esto según sea necesario */
-    height: 25px; /* Cambia esto según sea necesario width: calc(100% - 20px); */
-    
+    bottom: 10px; 
+    right: 15px;
+    width: 270px; 
+    height: 25px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;

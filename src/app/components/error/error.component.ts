@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './error.component.css'
 })
 export class ErrorComponent {
-
+  botonInicio() {
+    window.location.href = '/home';
+  }
 }

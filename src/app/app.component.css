@@ -30,13 +30,13 @@ h4 {
   font-family: 'beon'; 
 }
 
-.neonTexto {
+.neonEnlace {
   color: #00f;
   font-size: 18px;
   font-family: 'beon';
 }
 
-.neonTexto:hover {
+.neonEnlace:hover {
   color: rgb(255, 255, 255); 
   text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f; /* Efecto de resplandor */
 }
@@ -115,5 +115,13 @@ h4 {
 
 .botonNavegacion.active {
   background-color: #cc00cc; 
+}
+
+.mensajeError {
+  color: #ff0000; 
+  font-size: 20px; 
+  font-weight: bold; 
+  text-align: center; 
+  margin: 10px; 
 }
 

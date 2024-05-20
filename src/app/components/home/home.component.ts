@@ -19,18 +19,18 @@ export class HomeComponent {
   router = inject(Router);
 
   buttonAhorcado() {
-    // this.router.navigateByUrl('/ahorcado');
-    this.router.navigateByUrl('/sitio-en-construccion');
+    this.router.navigateByUrl('/ahorcado');
+    // this.router.navigateByUrl('/sitio-en-construccion');
   }
   buttonMayorMenor() {  
     this.router.navigateByUrl('/mayor-menor');
-    // this.router.navigateByUrl('/sitio-en-construccion');
   }
   buttonPreguntados() {
     // this.router.navigateByUrl('/preguntados');
     this.router.navigateByUrl('/sitio-en-construccion');
   }
   buttonJuegoPropio() {
+    // this.router.navigateByUrl('/trato-hecho');
     this.router.navigateByUrl('/sitio-en-construccion');
   }
 }

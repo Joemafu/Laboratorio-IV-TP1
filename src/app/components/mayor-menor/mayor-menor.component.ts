@@ -28,7 +28,6 @@ export class MayorMenorComponent implements OnInit{
     this.puntaje = 0;
     this.baraja = Naipe.barajar();
     this.ultimoNaipe = Naipe.tomarCarta(this.baraja);
-    console.log('Baraja barajada:', this.baraja);
   }
 
   elegirMayor()
@@ -50,7 +49,6 @@ export class MayorMenorComponent implements OnInit{
   elegirMenor()
   {
     this.seleccion = 'menor';
-    console.log ('ultimo naipe: ',this.ultimoNaipe,'\nnaipe nuevo: ', this.naipeNuevo)
     this.naipeNuevo = Naipe.tomarCarta(this.baraja);
 
     if(Naipe.esMenorOIgual(this.ultimoNaipe!, this.naipeNuevo!))
@@ -62,7 +60,6 @@ export class MayorMenorComponent implements OnInit{
     {
       this.terminarJuego();
     }
-    console.log ('ultimo naipe: ',this.ultimoNaipe,'\nnaipe nuevo: ', this.naipeNuevo)
   }
 
   terminarJuego()

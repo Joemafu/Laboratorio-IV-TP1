@@ -40,7 +40,6 @@ export class Naipe {
     }
 
     public static tomarCarta(baraja: Naipe[]): Naipe | undefined {
-        console.log ('Quedan ' + baraja.length + ' cartas en la baraja');
         return baraja.pop();   
     }
 }

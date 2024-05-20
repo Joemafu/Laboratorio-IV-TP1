@@ -57,14 +57,20 @@ export const routes: Routes = [
     },
     {
         // Lazy Loading
+        path: 'trato-hecho',
+        loadComponent: () => import('./components/trato-hecho/trato-hecho.component').then(c => c.TratoHechoComponent),
+        ...canActivate(() => redirectUnauthorizedToLogin()),
+    },
+    {
+        // Lazy Loading
         path: 'sitio-en-construccion',
         loadComponent: () => import('./components/sitio-en-construccion/sitio-en-construccion.component').then(c => c.SitioEnConstruccionComponent),
-    },
+    },/* 
     {
         // Lazy Loading
         path: 'chat',
         loadComponent: () => import('./components/chat/chat.component').then(c => c.ChatComponent),
-    },
+    }, */
     { 
         path: '**', redirectTo: 'error'
     }

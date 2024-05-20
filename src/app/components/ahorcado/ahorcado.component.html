@@ -1,1 +1,66 @@
-<p>ahorcado works!</p>
+<!-- Preload de imágenes del ahorcado -->
+<link rel="preload" href="../../../assets/img/ahorcado/a0.png" as="image">
+<link rel="preload" href="../../../assets/img/ahorcado/a1.png" as="image">
+<link rel="preload" href="../../../assets/img/ahorcado/a2.png" as="image">
+<link rel="preload" href="../../../assets/img/ahorcado/a3.png" as="image">
+<link rel="preload" href="../../../assets/img/ahorcado/a4.png" as="image">
+<link rel="preload" href="../../../assets/img/ahorcado/a5.png" as="image">
+<link rel="preload" href="../../../assets/img/ahorcado/a6.png" as="image">
+<link rel="preload" href="../../../assets/img/ahorcado/ganaste.gif" as="image">
+<link rel="preload" href="../../../assets/img/ahorcado/perdiste.gif" as="image">
+
+<div>
+    <h1 class="centrado">Juego del Ahorcado</h1>
+
+    <div *ngIf="juegoTerminado()">
+        <p class="centrado container" *ngIf="palabraAdivinada()">
+            Ganaste!
+        </p>
+        <p *ngIf="!palabraAdivinada()" class="centrado container ">
+            Perdiste! la palabra era: {{ palabraActual }}
+        </p>
+    </div>
+
+    <div class="centrado">
+        <img src="{{getImagenAhorcado()}}" alt="Imagen del ahorcado" class="imagenAhorcado">
+    </div>
+
+    <div class="neon centrado item">
+      <h4 class="palabra">{{ obtenerPalabra() }}</h4>
+    </div>
+
+    <div>
+        <div class="fila-teclas centrado">
+            <button *ngFor="let letra of 'qwertyuiop'.split('')" 
+                    (click)="adivinar(letra)" 
+                    [disabled]="letraAdivinada.has(letra) || juegoTerminado()"
+                    class="item botonNavegacion">
+            {{ letra }}
+            </button>
+        </div>
+        <div class="fila-teclas centrado">
+            <button *ngFor="let letra of 'asdfghjklñ'.split('')" 
+                    (click)="adivinar(letra)" 
+                    [disabled]="letraAdivinada.has(letra) || juegoTerminado()"
+                    class="item botonNavegacion">
+            {{ letra }}
+            </button>
+        </div>
+        <div class="fila-teclas centrado">
+            <button *ngFor="let letra of 'zxcvbnm'.split('')" 
+                    (click)="adivinar(letra)" 
+                    [disabled]="letraAdivinada.has(letra) || juegoTerminado()" 
+                    class="item botonNavegacion">
+            {{ letra }}
+            </button>
+        </div>
+        
+        <div class="centrado">
+            <p>Vidas perdidas: {{ vidasPerdidas }} / {{ vidasIniciales }} </p>
+        </div>
+
+        <div class="centrado">
+            <button class="centrado botonPeque item" (click)="startNewGame()">Nuevo Juego</button>
+        </div>
+    </div>
+</div>
