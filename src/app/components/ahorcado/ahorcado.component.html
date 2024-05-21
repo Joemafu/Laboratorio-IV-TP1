@@ -1,5 +1,5 @@
 <!-- Preload de imágenes del ahorcado -->
-<link rel="preload" href="../../../assets/img/ahorcado/a0.png" as="image">
+<!-- <link rel="preload" href="../../../assets/img/ahorcado/a0.png" as="image">
 <link rel="preload" href="../../../assets/img/ahorcado/a1.png" as="image">
 <link rel="preload" href="../../../assets/img/ahorcado/a2.png" as="image">
 <link rel="preload" href="../../../assets/img/ahorcado/a3.png" as="image">
@@ -7,7 +7,7 @@
 <link rel="preload" href="../../../assets/img/ahorcado/a5.png" as="image">
 <link rel="preload" href="../../../assets/img/ahorcado/a6.png" as="image">
 <link rel="preload" href="../../../assets/img/ahorcado/ganaste.gif" as="image">
-<link rel="preload" href="../../../assets/img/ahorcado/perdiste.gif" as="image">
+<link rel="preload" href="../../../assets/img/ahorcado/perdiste.gif" as="image"> -->
 
 <div>
     <h1 class="centrado">Juego del Ahorcado</h1>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="centrado">
-        <img src="{{getImagenAhorcado()}}" alt="Imagen del ahorcado" class="imagenAhorcado">
+        <img src="{{obtenerImagenAhorcado()}}" alt="Imagen del ahorcado">
     </div>
 
     <div class="neon centrado item">
@@ -60,7 +60,7 @@
         </div>
 
         <div class="centrado">
-            <button class="centrado botonPeque item" (click)="startNewGame()">Nuevo Juego</button>
+            <button class="centrado botonPeque item" (click)="nuevaPartida()">Nuevo Juego</button>
         </div>
     </div>
 </div>

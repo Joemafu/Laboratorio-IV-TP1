@@ -28,9 +28,6 @@ export class TriviaComponent implements OnInit {
   
   async ngOnInit() {
     this.cantidadDePersonajes = await this.apiRYMService.contarPersonajes();
-
-    
-
     this.nuevaPartida();
   }
 
