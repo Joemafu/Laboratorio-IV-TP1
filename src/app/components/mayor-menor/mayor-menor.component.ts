@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { Naipe } from '../../../models/naipe';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-mayor-menor',
   standalone: true,
@@ -28,6 +27,16 @@ export class MayorMenorComponent implements OnInit{
     this.puntaje = 0;
     this.baraja = Naipe.barajar();
     this.ultimoNaipe = Naipe.tomarCarta(this.baraja);
+  }
+
+  obtenerImagenCarta(): string {
+    let numero = this.ultimoNaipe?.numero;
+    if(numero === 'As')
+    {
+      numero = 'A';
+    }
+    const palo = this.ultimoNaipe?.palo.charAt(0);
+    return `../../../assets/img/menor-mayor/${numero}${palo}.svg`;
   }
 
   elegirMayor()
@@ -81,6 +90,6 @@ export class MayorMenorComponent implements OnInit{
       } else {
         this.router.navigateByUrl('/home');
       }
-    });
+    });    
   }
 }
