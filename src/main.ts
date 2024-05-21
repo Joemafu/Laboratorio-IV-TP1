@@ -69,11 +69,8 @@
 */
 
 /* 
+
   TO DO:
-
-  Sprint 1 (Clase 02):
-
-      ● Explicación del juego propio
 
   Sprint 2 (Clase 03)
 
@@ -87,15 +84,15 @@
   
     - Juego propio
       ● Realizar juego propio.
-      ● Agregar descripción de su juego en la sección “Quién soy”. Debe contar con
-      información de qué juego es y cómo se juega.
         
- */
+*/
 
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import { firebaseConfig } from './environments/environment.development';
+
+
 
 /* 
 
