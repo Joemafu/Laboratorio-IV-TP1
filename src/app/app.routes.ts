@@ -45,8 +45,8 @@ export const routes: Routes = [
     },
     {
         // Lazy Loading
-        path: 'preguntados',
-        loadComponent: () => import('./components/preguntados/preguntados.component').then(c => c.PreguntadosComponent),
+        path: 'trivia',
+        loadComponent: () => import('./components/trivia/trivia.component').then(c => c.TriviaComponent),
         ...canActivate(() => redirectUnauthorizedToLogin()),
     },
     {

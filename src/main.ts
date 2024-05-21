@@ -84,10 +84,7 @@
           ■ Fecha de ingreso
 
   Sprint 4 (Clase 05)
-    - Agregar el juego Preguntados
-      ● Tiene que obtener las imágenes de una api.
-      ● Realizar el llamado a la api desde un Service.
-      ● Dar al jugador opciones de elección. No se puede ingresar datos por teclado.
+  
     - Juego propio
       ● Realizar juego propio.
       ● Agregar descripción de su juego en la sección “Quién soy”. Debe contar con

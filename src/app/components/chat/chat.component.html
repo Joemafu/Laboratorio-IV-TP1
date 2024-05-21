@@ -1,10 +1,10 @@
-<div class="container" style="max-height: 300px; overflow-y: auto;" #chatBox>
-    <div class="card">
+<div class="container" style="max-height: 50vh; overflow-y: auto;" #chatBox>
+    <div>
      @if(messages) {
         @for (message of messages; track message) {
             @if(esMensajeUsuarioActual(message)){
 
-                <div class="container-mychat item" style="border-radius: 10px;">
+                <div class="container-mychat item">
                     <h6 class="item-chat center-align">{{formatearHora(message.date)}}</h6>
                     <h6 class="item-chat right-align">Yo dije: </h6>
                     <p class="item-chat right-align">{{ message.content }}</p>
@@ -23,9 +23,9 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container" style="display: flex;">
 
-    <input type="text" [(ngModel)]="message" (keyup.enter)="sendMessage()" id="messageInput" class="input-chat" placeholder="Escribe un mensaje...">
-    <button class="botonNavegacion" style="font-size: small;" (click)="sendMessage()">Enviar</button>
+    <input style="flex: 1;" type="text" [(ngModel)]="message" (keyup.enter)="sendMessage()" id="messageInput" class="input-chat" placeholder="Escribe un mensaje...">
+    <button class="botonPeque item" style="float: right;" (click)="sendMessage()">Enviar</button>
 
 </div>

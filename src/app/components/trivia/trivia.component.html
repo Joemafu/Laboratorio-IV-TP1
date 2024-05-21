@@ -1,0 +1,30 @@
+<div>
+    <h1 class="centrado">¡Adivina el Personaje de Rick & Morty!</h1>
+
+    <div class="centrado">
+        <h2> {{ resultado }}</h2>
+    </div>
+  
+    <div class="centrado">
+      <img src={{characterImage}} alt="Imagen del personaje" class="item">
+    </div>
+
+    <div class="centrado">
+        <h2>Racha actual: {{ racha }}</h2>
+    </div>
+  
+    <div class="centrado item">
+      <button *ngFor="let option of options" [id]="options.indexOf(option)" (click)="checkAnswer(option)" class="item botonNavegacion">
+        {{ option }}
+      </button>
+    </div>
+  
+    <div class="centrado">
+      <button class="centrado botonPeque item" (click)="nuevaPartida()">Nuevo Juego</button>
+    </div>
+  
+    <div *ngIf="errorMessage" class="mensajeError">
+      {{ errorMessage }}
+    </div>
+</div>
+  

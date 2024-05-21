@@ -1,0 +1,14 @@
+@import '../../app.component.css';
+  
+  .error-message {
+    color: red;
+    text-align: center;
+  }
+
+  .botonNavegacion:disabled
+  {
+      background-color: #a5167a;
+      color: #666666;
+      text-shadow: none;
+      cursor: not-allowed;
+  }
