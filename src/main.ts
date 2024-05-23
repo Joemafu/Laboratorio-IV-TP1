@@ -139,7 +139,7 @@ firebase login
 
 /* 
 
-Paso 7: inicio el prosyecto con este comando
+Paso 7: inicio el proyecto con este comando
 
 firebase init
 

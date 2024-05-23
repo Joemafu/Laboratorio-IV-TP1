@@ -1,1 +1,72 @@
-<p>trato-hecho works!</p>
+<!-- <iframe src="https://securegames.iwin.com/m/iwin/dond/v_181/" frameborder="0"></iframe>       -->  
+
+<div *ngIf="!juegoTerminado" class="contenedorPrincipal container">
+    <div class="columna montos">
+        <label *ngFor="let monto of montosBajos" #montoLabel class="monto botonPeque item">${{monto}}</label>
+    </div>
+
+    <div>
+        <div class="centrado">
+            <p>{{ mensajeInstruccion }}</p>
+        </div>
+
+        <div class="maletines">
+            <div class="fila-teclas centrado">
+                <button *ngFor="let nroMaletin of '123456789'.split('')" 
+                        #self
+                        (click)="develar(castear(nroMaletin), self)" 
+                        [disabled]="maletinesAbiertos.includes(castear(nroMaletin))"
+                        class="maletin item botonNavegacion">
+                {{ nroMaletin }}
+                </button>
+            </div>
+            <div class="fila-teclas centrado">
+                <button *ngFor="let nroMaletin of '10 11 12 13 14 15 16 17 18'.split(' ')" 
+                        #self
+                        (click)="develar(castear(nroMaletin), self)" 
+                        [disabled]="maletinesAbiertos.includes(castear(nroMaletin))"
+                        class="maletin item botonNavegacion">
+                {{ nroMaletin }}
+                </button>
+            </div>
+            <div class="fila-teclas centrado">
+                <button *ngFor="let nroMaletin of '19 20 21 22 23 24 25 26'.split(' ')" 
+                        #self
+                        (click)="develar(castear(nroMaletin), self)" 
+                        [disabled]="maletinesAbiertos.includes(castear(nroMaletin))" 
+                        class="maletin item botonNavegacion">
+                {{ nroMaletin }}
+                </button>
+            </div>
+        </div>
+
+        <div class="centrado">
+            <p *ngIf="maletinElegido!=0">Tu maletín es el Nº {{maletinElegido}}</p>
+        </div>
+        <div class="centrado columna">
+            <p *ngIf="numeroRonda > 1" class="centrado">Ofertas pasadas:</p>
+            <p class="centrado oferta" *ngFor="let ofert of ofertasPasadas">Oferta: ${{ofert}}</p>
+        </div>
+
+        <hr>
+
+        <div *ngIf="juegoPausado" class="centrado bottom">
+            <button id="aceptarOferta" class="centrado item botonNavegacion" (click)="aceptarOferta()">ACEPTAR OFERTA</button>
+            <button id="rechazarOferta" class="centrado item botonNavegacion" (click)="rechazarOferta()">RECHAZAR OFERTA</button>
+        </div>
+
+    </div>
+
+    <div class="columna">
+        <label *ngFor="let monto of montosAltos" #montoLabel class="monto botonPeque item">${{monto}}</label>
+    </div>
+</div>
+<div>
+    <div *ngIf="juegoTerminado" class="centrado columna">
+        <h1>{{mensajeFinDeJuegoUno}}</h1>
+        <br>
+        <h2 class="centrado">{{mensajeFinDeJuegoDos}}</h2>
+        <button id="reiniciar" class="centrado item botonNavegacion" (click)="nuevaPartida()">Volver a jugar</button>
+    </div>
+</div>
+

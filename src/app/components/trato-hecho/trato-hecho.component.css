@@ -1,0 +1,73 @@
+@import '../../components/ahorcado/ahorcado.component.css';
+
+.miMaletin
+{
+    background-color: #fff23ac2; 
+    border: none; 
+    border-radius: 25px;
+    cursor: not-allowed; 
+    transition: background-color 0.3s; 
+    font-size: 28px; 
+    box-shadow: 0px 4px 10px rgba(255, 0, 255, 0.4); 
+    margin-inline: 10px; 
+    font-family: 'beon'; 
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f; 
+    background-image: '../../../assets/img/suitcase.jpg';
+}
+
+.monto
+{
+    cursor: default;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f; /* Efecto de resplandor */
+    background-color: #ff00ff; 
+    margin: 2px;
+    padding: 10px;
+    width: 110px;
+    text-align: center;
+}
+
+/* Estilos básicos para el contenedor principal */
+.contenedorPrincipal {
+    display: flex;
+    align-items: space-around;
+}
+
+/* Estilos para cada columna */
+.columna {
+    display: flex;
+    flex-direction: column;
+}
+
+.disabled {
+    border-radius: 25px;
+    cursor: default;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f; /* Efecto de resplandor */
+    background-color: #ff00ff; 
+    margin: 2px;
+    padding: 10px;
+    width: 110px;
+    text-align: center;
+    background-color: #a5167a;
+    color: #666666;
+    text-shadow: none;
+    cursor: not-allowed;
+}
+
+.oferta
+{
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+#aceptarOferta:hover
+{
+    text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0, 0 0 40px #0f0, 0 0 50px #0f0, 0 0 60px #0f0, 0 0 70px #0f0;
+}
+
+#rechazarOferta:hover
+{
+    text-shadow: 0 0 10px #f00, 0 0 20px #f00, 0 0 30px #f00, 0 0 40px #f00, 0 0 50px #f00, 0 0 60px #f00, 0 0 70px #f00;
+}

@@ -24,10 +24,8 @@ export class HomeComponent {
   }
   buttonTrivia() {
     this.router.navigateByUrl('/trivia');
-    // this.router.navigateByUrl('/sitio-en-construccion');
   }
   buttonJuegoPropio() {
-    // this.router.navigateByUrl('/trato-hecho');
-    this.router.navigateByUrl('/sitio-en-construccion');
+    this.router.navigateByUrl('/trato-hecho');
   }
 }
