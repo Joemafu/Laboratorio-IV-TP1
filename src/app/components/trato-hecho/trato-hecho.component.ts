@@ -59,6 +59,8 @@ export class TratoHechoComponent {
     {
       boton.className = "miMaletin";
       this.maletinElegido = nroMaletin;
+      
+      this.actualizarInstruccion(); 
     }
     else
     {
@@ -68,16 +70,14 @@ export class TratoHechoComponent {
       this.maletinesPorRonda--;
 
       if (this.maletinesPorRonda == 0)
-        {
-          this.juegoPausado = true;
-          this.calcularOferta();
-        }
-        else
-        {
-
-          this.actualizarInstruccion(); 
-
-        }
+      {
+        this.juegoPausado = true;
+        this.calcularOferta();
+      }
+      else
+      {
+        this.actualizarInstruccion(); 
+      }
     }
     return true;
   }
