@@ -1,5 +1,5 @@
 # Laboratorio-IV-TP1
-Mesa de Juegos (Work in progress)
+Mesa de Juegos
 
 Deploy en Firebase
 https://mesadejuegostp1laboiv.web.app/home
