@@ -162,5 +162,6 @@ ng add @angular/fire
 
 */
 
+
 bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
