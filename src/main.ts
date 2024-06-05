@@ -79,11 +79,6 @@
         ○ En caso de que sea exitoso registrar:
           ■ Usuario
           ■ Fecha de ingreso
-
-  Sprint 4 (Clase 05)
-  
-    - Juego propio
-      ● Realizar juego propio.
         
 */
 
@@ -91,8 +86,6 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 import { firebaseConfig } from './environments/environment.development';
-
-
 
 /* 
 
