@@ -154,5 +154,13 @@ npm run deploy
 
 */
 
+/* 
+
+Paso 10 agrego authentication, firestore, y cloud storage con este comando
+
+ng add @angular/fire
+
+*/
+
 bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
