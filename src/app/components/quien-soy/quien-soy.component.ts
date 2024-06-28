@@ -17,11 +17,8 @@ export class QuienSoyComponent {
 
   getEdad() {
     this.edadJoel = this.fechaActual.getFullYear() - 1992;
-    
-    if (
-        this.fechaActual.getMonth() < this.mesNacimiento ||
-        (this.fechaActual.getMonth() === this.mesNacimiento && this.fechaActual.getDate() < this.diaNacimiento)
-    ) {
+
+    if (this.fechaActual.getMonth()+1 < this.mesNacimiento || (this.fechaActual.getMonth()+1 === this.mesNacimiento && this.fechaActual.getDate() < this.diaNacimiento)) {
         this.edadJoel--;
     }
     return this.edadJoel;
