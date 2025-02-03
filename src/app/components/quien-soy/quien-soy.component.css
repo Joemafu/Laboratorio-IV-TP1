@@ -1,1 +1,54 @@
 @import "../../app.component.css";
+
+/* Contenedor principal con flexbox para organizar los elementos */
+.responsive-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Sección "Sobre mí" */
+  .about-me {
+    flex: 1 1 300px;
+    max-width: 600px;
+  }
+  
+  /* Imagen de perfil */
+  .profile-image {
+    flex: 0 1 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile-image img {
+    border-radius: 50%;
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+  }
+  
+  /* Títulos y párrafos sin modificaciones importantes */
+  h1, h2 {
+    margin-bottom: 15px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .responsive-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .about-me, .profile-image {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+  
