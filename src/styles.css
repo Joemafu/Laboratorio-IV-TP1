@@ -1,5 +1,159 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-  padding: 0%;
-  margin: 0%;
+/* Variables globales */
+:root {
+  --primary: #ff00ffc2;
+  --secondary: #00f;
+  --banner: rgba(58, 30, 83, 0.2);
+  --text: #ffffff;
+  --font: 'beon', Arial, sans-serif;
+}
+
+@font-face {
+  font-family: 'beon';
+  src:
+      url(assets/fonts/beon-webfont.ttf) format('truetype'),
+      url(assets/fonts/Beon.otf) format('opentype');
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: url(assets/img/background.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-attachment: fixed;
+  }
+}
+
+
+/* BOTONES */
+
+.botonNavegacion, .botonPeque {
+  font-family: var(--font);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: var(--primary);
+  color: var(--secondary);
+  transition: background-color 0.3s, text-shadow 0.3s;
+}
+
+.botonNavegacion {
+  padding: 5px 10px;
+  font-size: 14px;
+  box-shadow: 0px 2px 5px rgba(255, 0, 255, 0.4);
+  margin: 15px 5px;
+}
+
+.botonNavegacion:hover, .botonPeque:hover {
+  color: var(--text);
+  text-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary);
+  background-color: #ff00ff;
+}
+
+.botonNavegacion.active, .botonPeque.active {
+  background-color: #cc00cc;
+}
+
+.botonPeque {
+  padding: 4px 8px;
+  font-size: 11px;
+  box-shadow: 0px 4px 10px rgba(255, 0, 255, 0.4);
+}
+
+@media (min-width: 768px) {
+  .botonNavegacion {
+    padding: 10px 20px;
+    font-size: 28px;
+  }
+
+  .botonPeque {
+    padding: 8px 16px;
+    font-size: 22px;
+  }
+}
+
+
+/* FIN BOTONES */
+
+/* TEXTO */
+
+h4 {
+  color: var(--text);
+  font-size: 12px;
+}
+
+.mensajeError {
+  color: #ff0000;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+}
+
+.neon, .neonEnlace {
+  color: var(--secondary);
+  font-family: var(--font);
+}
+
+.neon {
+  text-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary);
+}
+
+@media (min-width: 768px) {
+  h4 {
+    font-size: 24px;
+  }
+}
+
+/* FIN TEXTO */
+
+.banner {
+  font-size: small;
+  background-color: var(--banner);
+}
+
+.centrado {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.container {
+  background-color: rgba(218, 162, 255, 0.6); 
+  padding: 15px; 
+  margin: 15px;
+  font-family:Arial, Helvetica, sans-serif; 
+  text-shadow: 1px 1px 2px rgba(138,43,226);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.item
+{
+  margin: 10px;
+  padding: 10px;
+}
+
+.chatComponent{
+  max-width: 100lvw;
+  max-width: 80svw;
+}
+ 
+@media (min-width: 768px) {
+
+  .banner {
+    background-color: var(--banner);
+    padding: 15px; 
+  }
 }

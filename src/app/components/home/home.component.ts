@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 import { inject } from '@angular/core';
 import { ChatComponent } from '../chat/chat.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ RouterOutlet, ChatComponent ],
+  imports: [ ChatComponent ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

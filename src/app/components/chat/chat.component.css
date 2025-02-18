@@ -4,6 +4,10 @@
     text-align: right;
 }
 
+.left-align{
+    text-align: left;
+}
+
 .center-align{
     text-align: center;
     margin : 0 auto;

@@ -1,5 +1,5 @@
 <!-- Preload de imágenes del ahorcado -->
-<!-- <link rel="preload" href="../../../assets/img/ahorcado/a0.png" as="image">
+<link rel="preload" href="../../../assets/img/ahorcado/a0.png" as="image">
 <link rel="preload" href="../../../assets/img/ahorcado/a1.png" as="image">
 <link rel="preload" href="../../../assets/img/ahorcado/a2.png" as="image">
 <link rel="preload" href="../../../assets/img/ahorcado/a3.png" as="image">
@@ -7,16 +7,18 @@
 <link rel="preload" href="../../../assets/img/ahorcado/a5.png" as="image">
 <link rel="preload" href="../../../assets/img/ahorcado/a6.png" as="image">
 <link rel="preload" href="../../../assets/img/ahorcado/ganaste.gif" as="image">
-<link rel="preload" href="../../../assets/img/ahorcado/perdiste.gif" as="image"> -->
+<link rel="preload" href="../../../assets/img/ahorcado/perdiste.gif" as="image">
 
-<div>
-    <h1 class="centrado">Juego del Ahorcado</h1>
+<div class="container">
+    <div class="centrado">
+        <h1>Juego del Ahorcado</h1>
+    </div>
 
     <div *ngIf="juegoTerminado()">
-        <p class="centrado container" *ngIf="palabraAdivinada()">
+        <p class="centrado" *ngIf="palabraAdivinada()">
             Ganaste!
         </p>
-        <p *ngIf="!palabraAdivinada()" class="centrado container ">
+        <p *ngIf="!palabraAdivinada()" class="centrado ">
             Perdiste! la palabra era: {{ palabraActual }}
         </p>
     </div>

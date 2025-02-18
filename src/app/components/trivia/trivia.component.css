@@ -5,10 +5,15 @@
     text-align: center;
   }
 
-  .botonNavegacion:disabled
+  .botonPeque:disabled
   {
       background-color: #a5167a;
       color: #666666;
       text-shadow: none;
       cursor: not-allowed;
+  }
+
+  .botonPeque
+  {
+    display: flex;
   }

@@ -1,8 +1,8 @@
 <!-- <iframe src="https://securegames.iwin.com/m/iwin/dond/v_181/" frameborder="0"></iframe>       -->  
 
 <div *ngIf="!juegoTerminado" class="contenedorPrincipal container">
-    <div class="columna montos">
-        <label *ngFor="let monto of montosBajos" #montoLabel class="monto botonPeque item">${{monto}}</label>
+    <div class="columna">
+        <label *ngFor="let monto of montosBajos" #montoLabel class="monto botonPeque">${{monto}}</label>
     </div>
 
     <div>
@@ -16,7 +16,7 @@
                         #self
                         (click)="develar(castear(nroMaletin), self)" 
                         [disabled]="maletinesAbiertos.includes(castear(nroMaletin))"
-                        class="maletin item botonNavegacion">
+                        class="botonNavegacion">
                 {{ nroMaletin }}
                 </button>
             </div>
@@ -25,7 +25,7 @@
                         #self
                         (click)="develar(castear(nroMaletin), self)" 
                         [disabled]="maletinesAbiertos.includes(castear(nroMaletin))"
-                        class="maletin item botonNavegacion">
+                        class="botonNavegacion">
                 {{ nroMaletin }}
                 </button>
             </div>
@@ -34,7 +34,7 @@
                         #self
                         (click)="develar(castear(nroMaletin), self)" 
                         [disabled]="maletinesAbiertos.includes(castear(nroMaletin))" 
-                        class="maletin item botonNavegacion">
+                        class="botonNavegacion">
                 {{ nroMaletin }}
                 </button>
             </div>
@@ -58,15 +58,12 @@
     </div>
 
     <div class="columna">
-        <label *ngFor="let monto of montosAltos" #montoLabel class="monto botonPeque item">${{monto}}</label>
+        <label *ngFor="let monto of montosAltos" #montoLabel class="monto botonPeque">${{monto}}</label>
     </div>
 </div>
-<div>
-    <div *ngIf="juegoTerminado" class="centrado columna">
-        <h1>{{mensajeFinDeJuegoUno}}</h1>
-        <br>
-        <h2 class="centrado">{{mensajeFinDeJuegoDos}}</h2>
-        <button id="reiniciar" class="centrado item botonNavegacion" (click)="nuevaPartida()">Volver a jugar</button>
-    </div>
+<div *ngIf="juegoTerminado" class="container centrado columna">
+    <h1>{{mensajeFinDeJuegoUno}}</h1>
+    <br>
+    <h2 class="centrado">{{mensajeFinDeJuegoDos}}</h2>
+    <button id="reiniciar" class="centrado item botonNavegacion" (click)="nuevaPartida()">Volver a jugar</button>
 </div>
-

@@ -9,7 +9,7 @@
 }
 
 .palabra {
-    font-size: 80px;
+    font-size: 40px;
     margin: 20px 0;
 }
 
@@ -17,4 +17,27 @@
     margin: 2px;
     padding: 10px;
     width: 60px;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+img {
+    width: 70%;
+}
+
+@media (min-width: 768px) {
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .palabra {
+        font-size: 80px;
+    }
+
+    img {
+        width: auto;
+    }
 }

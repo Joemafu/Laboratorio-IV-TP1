@@ -1,40 +1,41 @@
-<div class="banner">
-
-    <div>
-        <h4>{{title}}</h4>
-    </div>
-
-    <div class="centrado">
-        <p class="mensajeError">{{alert}}</p>
-    </div>
-    <div class="centrado">
-        <!-- <label class="item" for="mail">mail</label> -->
-        <input [(ngModel)]="mail" placeholder="Correo" class="item" type="text" name="mail" id="mail" (keyup.enter)="buttonEntrar()">
-    </div>
-
-    <div class="centrado">
-        <!-- <label  class="item" for="pass">Contraseña</label> -->
-        <input  [(ngModel)]="pass" placeholder="Contraseña" class="item" type="password" name="pass" id="pass" (keyup.enter)="buttonEntrar()">
-    </div>
-
-    <div class="centrado">
-        <button class="item botonPeque" (click)="buttonEntrar()">Entrar</button>
-    </div>
-</div>
-
-<div class="banner centrado">
-    <div>
-        <h4>Cuentas Demo</h4>
-        <button class="item botonPeque" (click)="buttonDemoUno()">
-            Admin
-        </button>
-    
-        <button class="item botonPeque" (click)="buttonDemoDos()">
-            Bruma 😺
-        </button>
-    
-        <button class="item botonPeque" (click)="buttonDemoTres()">
-            Joel
-        </button>
+<div class="container">
+    <div class="banner">
+        <div class="centrado">
+            <h4>{{title}}</h4>
+        </div>
+        
+        <div class="centrado">
+            <p class="mensajeError">{{alert}}</p>
+        </div>
+        <div class="centrado">
+            <!-- <label class="item" for="mail">mail</label> -->
+            <input [(ngModel)]="mail" placeholder="Correo" class="item" type="text" name="mail" id="mail" (keyup.enter)="buttonEntrar()">
+        </div>
+        
+        <div class="centrado">
+            <!-- <label  class="item" for="pass">Contraseña</label> -->
+            <input  [(ngModel)]="pass" placeholder="Contraseña" class="item" type="password" name="pass" id="pass" (keyup.enter)="buttonEntrar()">
+        </div>
+        
+        <div class="centrado">
+            <button class="item botonPeque" (click)="buttonEntrar()">Entrar</button>
+        </div>
+        
+        <div>
+            <h4 class="centrado">Cuentas Demo</h4>
+            <div class="centrado">
+                <button class="item botonPeque" (click)="buttonDemoUno()">
+                    Admin
+                </button>
+                
+                <button class="item botonPeque" (click)="buttonDemoDos()">
+                    Bruma 🐱‍👤
+                </button>
+                
+                <button class="item botonPeque" (click)="buttonDemoTres()">
+                    Joel
+                </button>
+            </div>
+        </div>
     </div>
 </div>

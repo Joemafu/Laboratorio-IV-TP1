@@ -1,1 +1,11 @@
 @import '../../app.component.css';
+
+img{
+    size: 70%;
+}
+
+@media (max-width: 768px) {
+    img {
+        size: auto;
+    }
+}

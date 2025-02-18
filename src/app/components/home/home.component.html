@@ -1,21 +1,26 @@
-<div style="display: flex; justify-content: space-between; align-items: stretch;">
-    <div class="chatComponent">
-        <app-chat></app-chat>
-    </div>
-    
-    <div class="container" style="flex: 1;">
-        <div class="neon centrado">
-            <h4 class="">Selecciona un juego</h4>
-        </div>
+<div class="layout">
+    <div class="banner">
 
-        <div class="item centrado">
-            <button class="botonNavegacion" (click)="buttonAhorcado()"> Ahorcado </button>
-        
-            <button class="botonNavegacion" (click)="buttonMayorMenor()"> Mayor o menor </button>
+        <div class="container">
+            <div class="neon centrado">
+                <h4 class="">Juegos</h4>
+            </div>
             
-            <button class="botonNavegacion" (click)="buttonTrivia()"> Trivia </button>
-            
-            <button class="botonNavegacion" (click)="buttonJuegoPropio()"> Trato hecho </button>
+            <div class="gameButtons">
+                <button class="botonNavegacion" (click)="buttonAhorcado()"> Ahorcado </button>
+                
+                <button class="botonNavegacion" (click)="buttonMayorMenor()"> Mayor o menor </button>
+                
+                <button class="botonNavegacion" (click)="buttonTrivia()"> Trivia </button>
+                
+                <button class="botonNavegacion" (click)="buttonJuegoPropio()"> Trato hecho </button>
+            </div>
         </div>
+    </div>
+        
+    <div class="banner">
+
+        <app-chat></app-chat>
+        
     </div>
 </div>

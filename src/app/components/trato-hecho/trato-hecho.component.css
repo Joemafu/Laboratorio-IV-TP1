@@ -32,6 +32,7 @@
 .contenedorPrincipal {
     display: flex;
     align-items: space-around;
+    justify-content: center;
 }
 
 /* Estilos para cada columna */
@@ -70,4 +71,50 @@
 #rechazarOferta:hover
 {
     text-shadow: 0 0 10px #f00, 0 0 20px #f00, 0 0 30px #f00, 0 0 40px #f00, 0 0 50px #f00, 0 0 60px #f00, 0 0 70px #f00;
+}
+
+/* 📱 En móviles, convertir filas en columnas */
+@media (max-width: 768px) {
+    .fila-teclas {
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+    }
+
+    .botonNavegacion {
+        width: 85px; /* Aumenta el tamaño en móviles */
+        height: 60px;
+        font-size: 20px;
+        gap: 5px;
+    }
+
+    .maletines {
+        display: flex;
+        flex-direction:row;
+        align-items: start;
+        gap: 5px;
+    }
+
+    .disabled {
+        margin: 2px;
+        padding: 10px;
+        width: 50px;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .monto
+    {
+        margin: 2px;
+        padding: 10px;
+        width: 50px;
+        text-align: center;
+    }
+
+    .botonNavegacion {
+        width: 85px; /* Aumenta el tamaño en móviles */
+        height: 60px;
+        font-size: 14px;
+        gap: 5px;
+    }
 }

@@ -1,4 +1,4 @@
-<div>
+<div class="container">
     <h1 class="centrado">¡Adivina el Personaje de Rick & Morty!</h1>
 
     <div class="centrado">
@@ -14,7 +14,7 @@
     </div>
   
     <div class="centrado item">
-      <button *ngFor="let option of options" [id]="options.indexOf(option)" (click)="checkAnswer(option)" class="item botonNavegacion">
+      <button *ngFor="let option of options" [id]="options.indexOf(option)" (click)="checkAnswer(option)" class="item botonPeque">
         {{ option }}
       </button>
     </div>

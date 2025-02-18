@@ -1,32 +1,31 @@
 @import "../../app.component.css";
 
-#chatbox {
-    position: fixed;
-    bottom: 80px; 
-    right: 20px; 
-    width: 300px; 
-    height: 400px; 
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow-y: scroll;
+.layout {
+    display: flex;
+    flex-direction: column;
+    align-items: space-evenly;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
 }
 
-.message {
-    padding: 10px;
-    margin-bottom: 5px;
-    background-color: #e9e9e9;
-    border-radius: 5px;
+.gameButtons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 10px;
 }
 
-#messageInput {
-    position: fixed;
-    bottom: 10px; 
-    right: 15px;
-    width: 270px; 
-    height: 25px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 10px;
+@media (min-width: 768px) {
+    .layout {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .container {
+        min-width: 40vw;
+        min-height: 61vh;
+    }
 }
