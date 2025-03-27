@@ -39,6 +39,33 @@ export class Naipe {
         return baraja;
     }
 
+    public static barajarScoundrel(): Naipe[] {
+        const palos = ['Picas', 'Tréboles', 'Diamantes', 'Corazones'];
+        const valores = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'As'];
+        const baraja: Naipe[] = [];
+    
+        // Generar la baraja excluyendo figuras y ases rojos
+        for (const palo of palos) {
+            for (const valor of valores) {
+                // Excluir figuras y Ases de Diamantes y Corazones
+                if (['J', 'Q', 'K', 'As'].includes(valor) && (palo === 'Diamantes' || palo === 'Corazones')) {
+                    continue;
+                }
+    
+                const naipe = new Naipe(palo, valor, valores.indexOf(valor) + 2);
+                baraja.push(naipe);
+            }
+        }
+    
+        // Barajar con Fisher-Yates
+        for (let i = baraja.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [baraja[i], baraja[j]] = [baraja[j], baraja[i]];
+        }
+    
+        return baraja;
+    }
+
     public static tomarCarta(baraja: Naipe[]): Naipe | undefined {
         return baraja.pop();   
     }

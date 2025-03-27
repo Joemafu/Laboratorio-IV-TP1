@@ -28,4 +28,7 @@ export class HomeComponent {
   buttonJuegoPropio() {
     this.router.navigateByUrl('/trato-hecho');
   }
+  buttonScoundrel() {
+    this.router.navigateByUrl('/scoundrel');
+  }
 }

@@ -1,0 +1,9 @@
+.disabled {
+    border-radius: 25px;
+    text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f; /* Efecto de resplandor */
+    text-align: center;
+    background-color: #a5167a;
+    color: #666666;
+    text-shadow: none;
+    cursor: not-allowed;
+}

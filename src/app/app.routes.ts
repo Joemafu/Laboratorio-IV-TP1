@@ -63,6 +63,12 @@ export const routes: Routes = [
     },
     {
         // Lazy Loading
+        path: 'scoundrel',
+        loadComponent: () => import('./components/scoundrel/scoundrel.component').then(c => c.ScoundrelComponent),
+        ...canActivate(() => redirectUnauthorizedToLogin()),
+    },
+    {
+        // Lazy Loading
         path: 'sitio-en-construccion',
         loadComponent: () => import('./components/sitio-en-construccion/sitio-en-construccion.component').then(c => c.SitioEnConstruccionComponent),
     },/* 
