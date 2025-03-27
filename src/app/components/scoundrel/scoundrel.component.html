@@ -4,29 +4,36 @@
     <div>
         <h2 class="centrado">Salud: {{ healthPoints }}</h2>
 
-        <div class="centrado" >
-            <button class="item botonNavegacion" [class.disabled]="!puedeAvanzar" (click)="avanzarHabitacion()">Avanzar habitación</button>
+        <div class="centrado">
+            <button class="item botonNavegacion" [class.disabled]="!puedeAvanzar" (click)="avanzarHabitacion()">
+                Avanzar habitación
+            </button>
         </div>   
-       
-        <div class="centrado item">
-            <h4 class="centrado item">{{ baraja.length }}</h4>
-            <img src="../../../assets/img/menor-mayor/dorso.png" alt="Mazo" class="item">
-            <img *ngFor="let carta of room; let i = index" 
-                [src]="obtenerImagenCarta(carta)" 
-                (click)="useNaipe(i)"
-                [alt]="carta ? (carta.numero + ' de ' + carta.palo) : ''" 
-                class="item">
+
+        <div class="mazo-container">
+            <h4 class="mazo-texto">{{ baraja.length }}</h4>
+            <div class="cartas">
+                <img src="../../../assets/img/menor-mayor/dorso.png" alt="Mazo" class="mazo">
+                <img *ngFor="let carta of room; let i = index" 
+                    [src]="obtenerImagenCarta(carta)" 
+                    (click)="useNaipe(i)"
+                    [alt]="carta ? (carta.numero + ' de ' + carta.palo) : ''" 
+                    class="carta">
+            </div>
         </div>
 
         <div class="centrado">
             <button class="item botonNavegacion" [class.disabled]="!puedeHuir" (click)="huir()">HUIR</button>
         </div>   
-        
-        <div class="centrado item" *ngIf="arma">
+
+        <div class="arma-container" *ngIf="arma">
             <h4 class="centrado">Arma actual:</h4>
-            <img src={{obtenerImagenCarta(arma)}} alt='{{ arma.numero }} de {{arma.palo}}' class="item">
-            <h4 class="centrado" *ngIf="limitacionArma!=15">Limitacion del arma: {{ limitacionArma - 1}}</h4>
+            <img src={{obtenerImagenCarta(arma)}} alt='{{ arma.numero }} de {{arma.palo}}' class="arma">
+            <h4 class="centrado" *ngIf="limitacionArma!=15">
+                Limitación del arma: {{ limitacionArma - 1 }}
+            </h4>
         </div>
+
         <div>
             <h4 class="centrado" *ngIf="!arma">Arma actual: Puños</h4>
         </div>

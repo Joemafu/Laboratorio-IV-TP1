@@ -7,3 +7,136 @@
     text-shadow: none;
     cursor: not-allowed;
 }
+
+/* Estilos generales */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.centrado {
+    text-align: center;
+}
+
+button {
+    font-size: 1rem;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Mazo y cartas */
+.mazo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mazo {
+    width: 150px;
+    height: auto;
+}
+
+.mazo-texto {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Contenedor de cartas */
+.cartas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.carta {
+    width: 150px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.carta:hover {
+    transform: scale(1.1);
+}
+
+/* Arma */
+.arma-container {
+    margin-top: 15px;
+}
+
+.arma {
+    width: 150px;
+    height: auto;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+    button {
+        font-size: 1.1rem;
+        padding: 12px;
+        width: 80%;
+    }
+
+    .mazo {
+        width: 60px;
+    }
+
+    .carta {
+        width: 60px;
+    }
+
+    .arma {
+        width: 70px;
+    }
+
+    .mazo-texto {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    button {
+        font-size: 1rem;
+        padding: 10px;
+        width: 90%;
+    }
+
+    .mazo {
+        width: 60px;
+    }
+
+    .carta {
+        width: 60px;
+    }
+
+    .arma {
+        width: 60px;
+    }
+
+    .mazo-texto {
+        font-size: 1rem;
+    }
+
+    h1 {
+        margin: 5px;
+    }
+
+    h2 {
+        margin: 5px;
+    }
+
+    h4 {
+        margin: 5px;
+    }
+}
