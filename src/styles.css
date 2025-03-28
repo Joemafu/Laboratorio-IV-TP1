@@ -60,6 +60,11 @@ body {
   background-color: #ff00ff;
 }
 
+.neon:hover, .neonEnlace:hover {
+  color: var(--text);
+  text-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary);
+}
+
 .botonNavegacion.active, .botonPeque.active {
   background-color: #cc00cc;
 }

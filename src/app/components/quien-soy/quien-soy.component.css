@@ -9,21 +9,12 @@
     padding: 20px;
   }
   
-  /* Sección "Sobre mí" */
-  .about-me {
-    flex: 1 1 300px;
-    max-width: 600px;
-  }
-  
   /* Imagen de perfil */
   .profile-image {
     flex: 0 1 260px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .profile-image img {
     border-radius: 50%;
     width: 100%;
     max-width: 260px;
@@ -31,12 +22,19 @@
   }
   
   /* Títulos y párrafos sin modificaciones importantes */
-  h1, h2 {
+  h1, h2{
     margin-bottom: 15px;
   }
   
   p {
     margin-bottom: 20px;
+  }
+
+  img{
+    border-radius: 75%; 
+    padding: 50px;
+    width: 260px;
+    height: 260px;
   }
   
   /* Responsividad */
@@ -44,9 +42,12 @@
     .container {
       flex-direction: column;
       align-items: center;
+      justify-content: space-around;
+      padding: 5%;
+      margin: auto;
     }
   
-    .about-me, .profile-image {
+    .profile-image {
       flex: 1 1 100%;
       max-width: 100%;
     }
