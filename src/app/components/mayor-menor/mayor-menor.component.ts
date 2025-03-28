@@ -81,7 +81,7 @@ export class MayorMenorComponent implements OnInit{
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Volver a jugar',
-      cancelButtonText: 'Ir a Home',
+      cancelButtonText: 'Volver al inicio',
       allowOutsideClick: false,
       allowEscapeKey: false,
     }).then((result) => {
